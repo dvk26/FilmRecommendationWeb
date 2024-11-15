@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Header from './components/layout/header';
+import Footer from './components/layout/footer';
+import { Outlet } from 'react-router-dom';
+import { getAccountAPI } from './services/api_service';
+import { useEffect, useContext } from 'react';
+import { AuthContext } from './components/context/auth_context';
+import { Spin, message } from 'antd'; // Import Ant Design message for notifications
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const { setUser, isAppLoading, setIsAppLoading } = useContext(AuthContext);
 
+  useEffect(() => {
+    fetchUserInfo();
+  }, []);
+
+  const fetchUserInfo = async () => {
+    try {
+      const res = await getAccountAPI();
+      console.log("API Response:", res); // Log the API response
+      if (res && res.data && res.data.user) {
+        setUser(res.data.user);
+        console.log("User state updated:", res.data.user); // Check if user state updates
+      } else {
+        console.error("Invalid user data:", res);
+      }
+    } catch (error) {
+      message.error('Failed to load user information');
+      console.error("Error fetching user info:", error); // Log the error for debugging
+    } finally {
+      setIsAppLoading(false);
+    }
+  };
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {isAppLoading ? (
+        <Spin />
+      ) : (
+        <>
+          <Header />
+          <Outlet />
+          <Footer />
+        </>
+      )}
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
