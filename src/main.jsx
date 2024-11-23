@@ -6,6 +6,7 @@ import RegisterPage from './pages/register.jsx'
 import UserPage from './pages/user.jsx'
 import ReactDOM from 'react-dom/client'
 import ErrorPage from './pages/error.jsx'
+import IntroPage from './pages/intro.jsx'
 import { AuthWrapper } from './components/context/auth_context.jsx'
 import "./styles/global.css"
 
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterPage />,
+  },
+  {
+    path: "/intro",
+    element: <IntroPage />,
   },
   
 ]);

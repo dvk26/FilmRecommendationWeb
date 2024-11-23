@@ -1,5 +1,5 @@
 
-import { AliwangwangOutlined, AuditOutlined, HomeOutlined, LoginOutlined, UsergroupAddOutlined } from '@ant-design/icons';
+import { AliwangwangOutlined, AuditOutlined, HomeOutlined, LoginOutlined, UpOutlined, UsergroupAddOutlined } from '@ant-design/icons';
 import { Menu, message } from 'antd';
 import { useContext, useState, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -55,6 +55,11 @@ const Header = () =>{
             label: <NavLink to="/products">Products</NavLink>,
             key: 'products',
             icon: <AuditOutlined />,
+        },
+        {
+            label: <NavLink to="/intro">Intro</NavLink>,
+            key: 'intro',
+            incon: <HomeOutlined />,
         },
         
         ...(!user?.id ?
