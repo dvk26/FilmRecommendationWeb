@@ -1,0 +1,37 @@
+.login-page {
+    width: 99vw;
+    height: 99vh;
+    background: linear-gradient(120deg, rgba(41, 39, 39, 0.771), #812424);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-attachment: fixed !important;
+    display: flex;
+    justify-content: start-content;
+}
+
+.login-form {
+    width: 650px;
+    height: 70%;
+    /* Độ rộng của form */
+    padding: 20px;
+    /* Khoảng cách bên trong */
+    border-radius: 10px;
+    /* Bo góc */
+    background: rgba(255, 255, 255, 0.2);
+    /* Nền mờ với độ trong suốt */
+    backdrop-filter: blur(10px);
+    /* Làm mờ nền phía sau */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Tạo bóng nhẹ */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Đường viền trong suốt */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-size: xx-large;
+    margin: 40px;
+    padding: 20px
+}

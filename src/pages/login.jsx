@@ -1,9 +1,10 @@
 import Input from "antd/es/input/Input";
-import {Form, Button, notification, Row, Col,Divider, message,Select} from "antd";
+import {Form, Button, notification, Row, Col,Divider, message} from "antd";
 import { useNavigate } from "react-router-dom";
 import { loginAPI } from "../services/api_service";
 import { useState, useContext } from "react";
 import { AuthContext } from "../components/context/auth_context";
+import "./login.css";
 
 const LoginPage = () => {
 
@@ -34,87 +35,124 @@ const LoginPage = () => {
     }
     const navigate = useNavigate();
     return (
-        <Row justify={"center"} style={{margin:"30px"}}>
-            <Col xs={24} md={16} lg={8}>
-                <fieldset style={{
-                    padding: "15px",
-                    margin:"5px",
-                    border: "1px solid #ccc",
-                    borderRadius: "5px"
-                }}>
-                    <legend>Đăng nhập</legend>
-                    <Form
-                        loading={loading}
-                        layout="vertical"
+        <div className="login-page">
+            <Row justify={"center"} style={{ margin: "0px", padding: "20px 0", width:"100%",display:"flex",justifyContent: "flex-start", alignItem: "center"}}>
+                <Col xs={24} md={16} lg={12}
+                    style={{
+                        padding: 0, // Loại bỏ padding
+                        display: "flex",
+                        justifyContent: "flex-start", 
+                        alignItem: "center",
+                    }}
+                >
+                    <img
+                        src= "/images/login.png"
+
+                        alt="Signup Illignup.pngustration" 
                         style={{
-                            padding: "20px",
-                            backgroundColor: "#ffffff", // Nền trắng cho form
-                            margin: "0 auto", // Căn giữa form
+                            height:"98%",
+                            width: "102%",        // Chiều rộng hình ảnh chiếm toàn bộ container
+                            maxWidth: "600px",    // Chiều rộng tối đa
+                            margin: "20px auto",  // Căn giữa hình ảnh
+                            display: "block",      // Đảm bảo hình ảnh là một block element
+                            padding: "10px 50px 20px 10px",
+                            marginLeft: "20px",
+                        }}
+                    />
+                    <fieldset style={{
+                        margin: "0px",
+                        border: "none",
+                        borderRadius: "5px",
+                        padding: "10px",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                    }}>
+                        <div className="login-form" >
+                            <h2 style={{paddingLeft:"40px"}}>Đăng nhập</h2>
+                            <Form
+                                layout="vertical"
+                                form={form}
+                                initialValues={{
+                                    remember: true,
+                                }}
+                                onFinish={onFinish}
+                                autoComplete="off"
+                                style={{
+                                    width: "100%", // Đảm bảo form chiếm toàn bộ chiều ngang
+                                    maxWidth: "750px", // Đặt chiều rộng tối đa cho form
+                                    fontSize:"x-large",
+        
+                                }}
+                            >
                         
-                        }}
-                        form={form}
-                        initialValues={{
-                            remember: true,
-                        }}
-                        onFinish={onFinish}
-                        autoComplete="off"
-                     >
-                
-                        <Form.Item
-                            label="Username"
-                            name="fullname"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: "Please input your username!",
-                                }
-                            ]}
-                        >
-                            <Input />
-                        </Form.Item>
-                    
+                                <Form.Item
+                                    
+                                    name="username"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: "Please input your username!",
+                                        },
+                                    ]}
+                                >
+                                    <Input placeholder="Username"style={{ fontSize: "x-large" }} />
+                                </Form.Item>
+                            
 
-                
-                    <Form.Item
-                        label="Password"
-                        name="password"
-                        rules={[
-                            {
-                            required: true,
-                            message: 'Please input your password!',
-                            },
-                        ]}
-                        >
-                        <Input.Password  onKeyDown={(event)=>{
-                            if(event.key==='Enter') form.submit();
-                        }}/>
-                    </Form.Item>
-                    
-                    
-                    <div style={{display: "flex", justifyContent: "center", textAlign: "center"}}>
-                        <Button  onClick={() => { form.submit(); }} type="primary">
-                            Login
-                        </Button>
-                        <Button type="link" htmlType="button" onClick={() => { navigate('/'); }}>
-                            Go to home page
-                        </Button>
-                    </div>
-                    
-                    
-            
-                    <Divider variant="dashed" style={{ borderColor: '#7cb305' }}></Divider>
-                    <div>
-                        <span>Chưa có tài khoản?</span>
-                        <Button type="link" htmlType="button" onClick={() => { navigate('/register'); }}>
-                        Đăng ký tại đây
-                        </Button>
-                    </div>
-                
-        </Form>
+                        
+                                <Form.Item
 
-                </fieldset>
-            </Col>
-        </Row>
+                                    name="password"
+                                    rules={[
+                                        {
+                                        required: true,
+                                        message: 'Please input your password!',
+                                        },
+                                    ]}
+                                    >
+                                    <Input.Password   onKeyDown={(event)=>{
+                                        if(event.key==='Enter') form.submit();
+                                    }}
+                                    placeholder="Password"style={{ fontSize: "x-large", height:"100%" }}
+                                    />
+                                </Form.Item>
+                                
+                                
+                                <div style={{display: "flex", justifyContent: "center", textAlign: "center" , width:"100%"}}>
+                                    <Button style={{ fontSize: "x-large",height:"190%" , width:"100%", borderRadius:"20px", backgroundColor:"#B23F4C"}} onClick={() => { form.submit(); }} type="primary">
+                                        Đăng nhập
+                                    </Button>
+                                </div>
+                                <div style={{display: "flex", justifyContent: "center", textAlign: "center" , width:"100%"}}>
+                                    <Button style={{ fontSize: "x-large",height:"100%" , width:"100%", borderRadius:"20px" , color:"white"}} 
+                                         type="link" htmlType="button" onClick={() => { navigate('/'); }}>
+                                        Go to home page
+                                    </Button>
+                                </div>
+                                    
+                                
+                                
+                        
+                                <Divider variant="dashed" style={{ borderColor: 'white' }}></Divider>
+                                <div style={{display: "flex", justifyContent: "center", textAlign: "center" , width:"100%", fontSize: "x-large",height:"100%" ,  borderRadius:"20px" , color:"white"}}>
+                                    <span>Chưa có tài khoản?</span>
+                                    <Button style={{padding:"5px 5px -4px 5px",fontSize:"large", color:"white"}}  type="link" htmlType="button" onClick={() => { navigate('/register'); }}>
+                                    Đăng ký tại đây
+                                    </Button>
+                                </div>
+                            
+                            </Form>
+                        </div>
+                        
+
+                    </fieldset>
+                </Col>
+            </Row>
+        </div>
+        
         
     )
 }
