@@ -1,18 +1,12 @@
-.login-page {
-    width: 99vw;
-    height: 99vh;
-    background: linear-gradient(120deg, rgba(41, 39, 39, 0.771), #812424);
+body {
+    background: radial-gradient(50% 50% at 50% 50%, #873D3D 0%, #282323 100%);
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    background-attachment: fixed !important;
-    display: flex;
-    justify-content: start-content;
+    background-attachment: fixed;
 }
 
 .login-form {
     width: 650px;
-    height: 70%;
+    height: 90%;
     /* Độ rộng của form */
     padding: 20px;
     /* Khoảng cách bên trong */

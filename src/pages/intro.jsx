@@ -1,4 +1,4 @@
-import React from "react";
+import {useContext} from 'react'
 import Header from "../components/layout/header";
 import introPic from '../assets/intro/intro_picture.png';
 import movie1 from '../assets/intro/movie_rank_1.png';
@@ -11,12 +11,25 @@ import iconFree from '../assets/intro/emojione-monotone_free-button.svg';
 import iconHappy from '../assets/intro/tdesign_happy-filled.svg';
 import iconTime from '../assets/intro/tdesign_time-filled.svg';
 import logo from '../assets/intro/logo.svg';
+import {  useNavigate } from "react-router-dom";
+import {AuthContext} from '../components/context/auth_context';
 import '../pages/intro.css';
 
 const IntroPage = () => {
+    const {user,setUser} = useContext(AuthContext)
+
+    const navigate = useNavigate();
+    const handleClickLogin=() =>{
+        console.log("user id: ", user.id);
+        navigate("/login")
+    }
+    const handleClickRegister=() =>{
+        navigate("/register")
+    }
+
     return (
         <div >
-            <Header />
+       
             <div class="container">
                 <img src={introPic} style={{width:"100%",height:"100%",margin:"auto"}} />
                 <p class="intro-text" style={{fontSize:"50px",bottom:"110px",right:"50px"}}>Movies that sync with your soul.</p>
@@ -71,8 +84,18 @@ const IntroPage = () => {
                 <img src={logo} style={{width:"460px",position: "relative"}}/>
                 <h2 class="intro-text" style={{fontSize:"119px",top:"10%",left:"50%"}}>MIUVIE</h2>
                 <p2 style={{fontFamily:"Bagel Fat One",color:"#D4C5C5",fontSize:"50px",position:"absolute",top:"45%",left:"50%"}} >Let’s move vì MIUVIE!</p2>
-                <button class="login-button" style={{top:"73%",left:"50%"}}>Đăng ký</button>
-                <button class="login-button" style={{top:"73%",left:"70%"}}>Đăng nhập</button>
+                
+
+                {!user?.id && (
+                    <>
+                        <button className="login-button" style={{ top: "73%", left: "50%" }} onClick={handleClickRegister}>
+                            Đăng ký
+                        </button>
+                        <button className="login-button" style={{ top: "73%", left: "70%" }} onClick={handleClickLogin}>
+                            Đăng nhập
+                        </button>
+                    </>
+                )}
             </div>
         </div>
     )

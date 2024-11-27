@@ -4,6 +4,6 @@
     padding: 5px;
     bottom: 0;
     width: 100%;
-    background-color: #ffffff;
+    background:radial-gradient(50% 50% at 50% 50%, #873D3D 0%, #282323 100%);
     text-align: center;
 }

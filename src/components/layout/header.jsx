@@ -1,6 +1,6 @@
 
 import { AliwangwangOutlined, AuditOutlined, HomeOutlined, LoginOutlined, UpOutlined, UsergroupAddOutlined } from '@ant-design/icons';
-import { Menu, message } from 'antd';
+import { Menu, message, Divider} from 'antd';
 import { useContext, useState, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logoutAPI } from "../../services/api_service";
@@ -57,6 +57,11 @@ const Header = () =>{
             icon: <AuditOutlined />,
         },
         {
+            label: <NavLink to="/main">Main</NavLink>,
+            key: 'main',
+            incon: <HomeOutlined />,
+        },
+        {
             label: <NavLink to="/intro">Intro</NavLink>,
             key: 'intro',
             incon: <HomeOutlined />,
@@ -90,13 +95,16 @@ const Header = () =>{
 
     ];
     return (
-        <Menu
-            
-            onClick={onClick}
-            selectedKeys={[current]}
-            mode="horizontal"
-            items={items}
-        />
+        <div className="header">
+            <Menu
+                onClick={onClick}
+                selectedKeys={[current]}
+                mode="horizontal"
+                items={items}
+            />
+            <Divider variant="bold" style={{ borderColor: 'white' }}></Divider>
+        </div>
+        
     );
 }
 

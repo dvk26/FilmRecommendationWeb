@@ -23,5 +23,27 @@ li a:hover:not(.active) {
 }
 
 .active {
-    background-color:#fff;
+    color: #FFD700;
+}
+
+.ant-menu {
+    background: radial-gradient(50% 50% at 50% 50%, #873D3D 0%, #282323 100%);
+    /* Màu nền mới */
+}
+
+.ant-menu-item {
+    color: white !important;
+    /* Màu chữ */
+}
+
+.ant-menu-item:hover {
+    color: #03439c !important;
+    /* Màu chữ khi hover (tùy chỉnh nếu cần) */
+}
+
+.ant-menu-item-selected {
+    
+    /* Màu nền khi được chọn */
+    color: #FFD700 !important;
+    /* Màu chữ khi được chọn */
 }

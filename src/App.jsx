@@ -14,21 +14,12 @@ const App = () => {
   }, []);
 
   const fetchUserInfo = async () => {
-    try {
-      const res = await getAccountAPI();
-      console.log("API Response:", res); // Log the API response
-      if (res && res.data && res.data.user) {
-        setUser(res.data.user);
-        console.log("User state updated:", res.data.user); // Check if user state updates
-      } else {
-        console.error("Invalid user data:", res);
-      }
-    } catch (error) {
-      message.error('Failed to load user information');
-      console.error("Error fetching user info:", error); // Log the error for debugging
-    } finally {
-      setIsAppLoading(false);
+    const res = await getAccountAPI();
+    console.log("check res:",res.data);
+    if(res.data){
+      setUser(res.data)
     }
+    setIsAppLoading(false);
   };
   return (
     <>
@@ -38,7 +29,7 @@ const App = () => {
         <>
           <Header />
           <Outlet />
-          <Footer />
+    
         </>
       )}
     </>
