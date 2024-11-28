@@ -63,27 +63,27 @@ const IntroPage = () => {
                 <img src={aiPolygon} width="100%" style={{margin: "auto"}}/>
                 <img src={Aicamera} style={{position:"absolute", bottom:"3%",right:"2%",width:"180px"}}/>
 
-                <p style={{fontSize:"40px",position:"absolute",top:"26%",left:"73%"}}>Phù hợp với</p>
-                <p style={{fontSize:"40px",position:"absolute",top:"32%",left:"73%"}}>sở thích của bạn.</p>
-                <img src={iconFavorite} style={{position:"absolute",width:"60px",top:"44%",left:"88%"}}/>
+                <p style={{fontSize:"40px",position:"absolute",top:"3%",left:"81%"}}>Phù hợp với</p>
+                <p style={{fontSize:"40px",position:"absolute",top:"12%",left:"79%"}}>sở thích của bạn.</p>
+                <img src={iconFavorite} style={{position:"absolute",width:"60px",top:"29%",left:"86%"}}/>
 
-                <p style={{fontSize:"40px",position:"absolute",top:"39%",left:"50.5%"}}>Không gian</p>
-                <p style={{fontSize:"40px",position:"absolute",top:"45%",left:"50.5%"}}>giải trí, thư giãn.</p>
-                <img src={iconHappy} style={{position:"absolute",width:"60px",top:"58%",left:"65.5%"}}/>
+                <p style={{fontSize:"40px",position:"absolute",top:"25%",left:"66.5%"}}>Không gian</p>
+                <p style={{fontSize:"40px",position:"absolute",top:"33%",left:"63.5%"}}>giải trí, thư giãn.</p>
+                <img src={iconHappy} style={{position:"absolute",width:"60px",top:"50%",left:"70.5%"}}/>
 
-                <p style={{fontSize:"40px",position:"absolute",top:"52%",left:"28%"}}>Trải nghiệm</p>
-                <p style={{fontSize:"40px",position:"absolute",top:"58%",left:"28%"}}>miễn phí.</p>
-                <img src={iconFree} style={{position:"absolute",width:"60px",top:"69%",left:"43%"}}/>
+                <p style={{fontSize:"40px",position:"absolute",top:"37%",left:"49%"}}>Trải nghiệm</p>
+                <p style={{fontSize:"40px",position:"absolute",top:"46%",left:"51%"}}>miễn phí.</p>
+                <img src={iconFree} style={{position:"absolute",width:"60px",top:"63%",left:"54%"}}/>
 
-                <p style={{fontSize:"40px",position:"absolute",top:"65%",left:"5.5%"}}>Dùng ở</p>
-                <p style={{fontSize:"40px",position:"absolute",top:"71%",left:"5.5%"}}>mọi lúc, mọi nơi.</p>
-                <img src={iconTime} style={{position:"absolute",width:"60px",top:"84%",left:"21%"}}/>
+                <p style={{fontSize:"40px",position:"absolute",top:"52%",left:"37.5%"}}>Dùng ở</p>
+                <p style={{fontSize:"40px",position:"absolute",top:"61%",left:"31.5%"}}>mọi lúc, mọi nơi.</p>
+                <img src={iconTime} style={{position:"absolute",width:"60px",top:"81%",left:"39%"}}/>
             </div>
 
             <div class="container" style={{padding:"50px"}}>
                 <img src={logo} style={{width:"460px",position: "relative"}}/>
-                <h2 class="intro-text" style={{fontSize:"119px",top:"10%",left:"50%"}}>MIUVIE</h2>
-                <p2 style={{fontFamily:"Bagel Fat One",color:"#D4C5C5",fontSize:"50px",position:"absolute",top:"45%",left:"50%"}} >Let’s move vì MIUVIE!</p2>
+                <h2 class="intro-text" style={{fontSize:"119px",top:"98%",left:"54%"}}>MIUVIE</h2>
+                <p2 style={{fontFamily:"Bagel Fat One",color:"#D4C5C5",fontSize:"50px",position:"absolute",top:"100%",left:"50%"}} >Let’s move vì MIUVIE!</p2>
                 
 
                 {!user?.id && (

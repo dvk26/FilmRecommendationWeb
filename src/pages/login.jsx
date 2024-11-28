@@ -113,9 +113,7 @@ const LoginPage = () => {
                                         },
                                     ]}
                                     >
-                                    <Input.Password   onKeyDown={(event)=>{
-                                        if(event.key==='Enter') form.submit();
-                                    }}
+                                    <Input
                                     placeholder="Password"style={{ fontSize: "x-large", height:"100%" }}
                                     />
                                 </Form.Item>

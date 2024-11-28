@@ -1,7 +1,7 @@
 
-import { AliwangwangOutlined, AuditOutlined, HomeOutlined, LoginOutlined, UpOutlined, UsergroupAddOutlined } from '@ant-design/icons';
-import { Menu, message, Divider} from 'antd';
-import { useContext, useState, useEffect } from 'react';
+import { AliwangwangOutlined, AuditOutlined, HomeOutlined, LoginOutlined, UsergroupAddOutlined } from '@ant-design/icons';
+import { Divider, Menu, message } from 'antd';
+import { useContext, useEffect, useState } from 'react';
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logoutAPI } from "../../services/api_service";
 import { AuthContext } from "../context/auth_context";
@@ -102,7 +102,7 @@ const Header = () =>{
                 mode="horizontal"
                 items={items}
             />
-            <Divider variant="bold" style={{ borderColor: 'white' }}></Divider>
+            <Divider variant="bold" style={{ borderColor: 'white',margin:'0px'}}></Divider>
         </div>
         
     );

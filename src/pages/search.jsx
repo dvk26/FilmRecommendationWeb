@@ -2,6 +2,7 @@ import {useLocation} from 'react-router-dom'
 import {useState} from 'react'
 import {Input} from 'antd'
 import { SearchOutlined } from '@ant-design/icons';
+import "./search.css"
 
 const SearchPage = () =>{
     const location = useLocation();
