@@ -4,6 +4,9 @@ import App from './App.jsx'
 import LoginPage from './pages/login.jsx'
 import RegisterPage from './pages/register.jsx'
 import UserPage from './pages/user.jsx'
+
+import AboutPage from './pages/about.jsx'
+
 import ReactDOM from 'react-dom/client'
 import ErrorPage from './pages/error.jsx'
 import IntroPage from './pages/intro.jsx'
@@ -39,7 +42,11 @@ const router = createBrowserRouter([
       {
         path:"/search",
         element: <SearchPage />
-      }
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,        
+      },
     ]
   },
   {
