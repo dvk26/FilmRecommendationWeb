@@ -1,5 +1,4 @@
 import {useContext} from 'react'
-import Header from "../components/layout/header";
 import introPic from '../assets/intro/intro_picture.png';
 import movie1 from '../assets/intro/movie_rank_1.png';
 import movie2 from '../assets/intro/movie_rank_2.png';

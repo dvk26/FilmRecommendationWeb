@@ -1,4 +1,5 @@
-import Header from './components/layout/header';
+import Header1 from './components/layout/header1';
+import Header2 from './components/layout/header2';
 import Footer from './components/layout/footer';
 import { Outlet } from 'react-router-dom';
 import { getAccountAPI } from './services/api_service';
@@ -7,7 +8,7 @@ import { AuthContext } from './components/context/auth_context';
 import { Spin, message } from 'antd'; // Import Ant Design message for notifications
 
 const App = () => {
-  const { setUser, isAppLoading, setIsAppLoading } = useContext(AuthContext);
+  const { user, setUser, isAppLoading, setIsAppLoading } = useContext(AuthContext);
 
   useEffect(() => {
     fetchUserInfo();
@@ -21,15 +22,23 @@ const App = () => {
     }
     setIsAppLoading(false);
   };
+
+  let header = <Header2 />;
+  let footer;
+  if((user.id == "")) {
+    footer = <Footer />;
+    header = <Header1 />;
+  }
+
   return (
     <>
       {isAppLoading ? (
         <Spin />
       ) : (
         <>
-          <Header />
+          {header}
           <Outlet />
-    
+          {footer}
         </>
       )}
     </>

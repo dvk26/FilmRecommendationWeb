@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="siteContent" style={{fontSize: "26px", lineHeight: "1.2"}}>
                     <p>Trường Đại học Khoa học tự nhiên - HCMUS</p>
                     <p>227 Nguyễn Văn Cừ, phường 4, Quận 5 </p>
-                    <p >Thành phố Hồ Chí Minh</p>
+                    <p>Thành phố Hồ Chí Minh</p>
                 </div>
 
                 <p className="siteTitle" style={{fontSize: "38px", marginTop: "50px"}}>Hotline</p>
@@ -37,15 +37,12 @@ const Footer = () => {
                 <Input placeholder="Email Address" className="siteContent" id="inputFieldAbout" size="large"/>
 
                 <Flex vertical gap="small" style={{ width: '100%' }}>
-                    <Button type="primary" block size={"large"} className= "siteTitle" id="ButtonAbout" style=
-                        {{ 
-                            
-                        }}> 
+                    <Button type="primary" block size={"large"} className= "siteTitle" id="ButtonAbout"> 
                     Subscribe!</Button>
                 </Flex>
 
                 <div className="siteContent" style={{fontSize: "18px", marginTop: "40px"}}>
-                    <p style={{textAlign: "left", paddingLeft: "126px"}}>Name Inc. © 2024 All Rights Reserved</p>
+                    <p style={{textAlign: "right", paddingLeft: "auto"}}>Name Inc. © 2024 All Rights Reserved</p>
                     <div style={{textAlign: "right"}}>
                         <p>Machine Learning</p>
                         <p>22KHMT1 - Group 06</p>

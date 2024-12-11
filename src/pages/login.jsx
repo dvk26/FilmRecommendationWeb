@@ -21,7 +21,7 @@ const LoginPage = () => {
            // console.log("user: ", res.data.user)
             localStorage.setItem("access_token", res.data.access_token);
             setUser(res.data.user);
-            navigate("/")
+            navigate("/main")
 
         }
         else {

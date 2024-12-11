@@ -1,31 +1,31 @@
-import {Row, Col} from "antd";
+import {Row, Col, Flex} from "antd";
 import "./about.css";
 
 const AboutPage = () => {
     return (
-        <div style={{paddingRight:"60px", paddingLeft:"60px"}}>
-            <Row justify={"center"} style={{marginTop: "20px", marginBottom: "40px"}}>
+        <div style={{paddingRight:"90px", paddingLeft:"90px"}}>
+            <Row justify={"center"} style={{marginTop: "40px", marginBottom: "50px"}}>
                 <Col>
                     <p className="siteTitle" id="siteContent" style={{fontSize: "75px"}}>GIỚI THIỆU</p>
                 </Col>
             </Row>
 
             <Row>
-                <Col style={{paddingTop: "80px"}}>
-                    <Row justify={"center"}>
+                <Col span={9} style={{paddingTop: "40px"}}>
+                    <Row justify={"left"}>
                         <Col>
-                            <img width={443} src="/Layer 2.svg" alt="Logo"/>
+                            <img style={{width:"85%"}} src="/Layer 2.svg" alt="Logo"/>
                         </Col>
                     </Row>
 
-                    <Row justify={"left"} style={{paddingLeft: "50px"}}>
+                    <Row justify={"left"} style={{paddingLeft: "55px", marginTop: "10px"}}>
                         <Col>
                             <p className="logoTitle" id="siteContent" style={{fontSize: "95px", textAlign: "center"}}>MIUVIE</p>
                         </Col>
                     </Row>
                 </Col>
 
-                <Col span={14} style={{marginLeft: "110px"}}>
+                <Col span={15} style={{paddingLeft: "25px"}}>
                     <p className="siteTitle" id="siteContent" style={{fontSize: "53px"}}>VỀ MIUVIE</p>
                     <p className="siteContent" style={{textAlign: "justify", paddingLeft: "9px"}}>
                         Chào mừng bạn đến với MIUVIE – người bạn đồng hành lý tưởng cho những tín đồ điện ảnh. Với công nghệ AI 
@@ -37,7 +37,7 @@ const AboutPage = () => {
             </Row>
 
             <Row style={{marginTop: "60px"}}>
-                <Col span={14}>
+                <Col span={15}>
                     <p className="siteTitle" id="siteContent" style={{fontSize: "53px", paddingLeft: "2px"}}>ĐỘI NGŨ PHÁT TRIỂN</p>
                     <p className="siteContent" style={{textAlign: "justify"}}>
                     MIUVIE là thành quả của nhóm Nguyễn Văn Đức, Nguyễn Văn Hậu, Phạm Nguyên Khánh, Đặng Văn Kỳ, 
@@ -48,9 +48,16 @@ const AboutPage = () => {
                     </p>
                 </Col>
 
-                <div style={{paddingLeft: "50px", paddingTop: "70px"}}>
-                    <img width={500} src="/GroupPhoto.svg" alt="GroupPhoto"/>
-                </div>
+                <Col span={9}>
+                    {/* <div>
+                        
+                    </div> */}
+                    <Flex  style={{paddingTop: "90px"}} justify={"flex-end"} align={"flex-start"}>
+                        <img style={{width: "90%"}} src="/GroupPhoto.svg" alt="GroupPhoto"/>
+                    </Flex>
+                </Col>
+
+                
             </Row>
         </div>
         

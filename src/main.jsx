@@ -12,6 +12,7 @@ import ErrorPage from './pages/error.jsx'
 import IntroPage from './pages/intro.jsx'
 import MainPage from './pages/main.jsx'
 import SearchPage from './pages/search.jsx'
+import CollectionPage from './pages/collection.jsx'
 import { AuthWrapper } from './components/context/auth_context.jsx'
 import "./styles/global.css"
 
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutPage />,        
+      },
+      {
+        path:"/collection",
+        element: <CollectionPage />
       },
     ]
   },
