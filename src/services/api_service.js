@@ -32,7 +32,17 @@ const loginAPI = (username,  password) =>{
     console.log(data)
     return axios.post(URL_BACKEND, data)
 }
+
+const searchAPI = (Prompt) => {
+    const URL_BACKEND = "/api/v1/searches/{prompt}"
+    const data = {
+        Prompt: Prompt
+    }
+
+    return axios.post(URL_BACKEND, data)
+}
+
 export{
-    getAccountAPI, logoutAPI, registerAPI, loginAPI
+    getAccountAPI, logoutAPI, registerAPI, loginAPI, searchAPI
 
 }

@@ -4,11 +4,15 @@ import App from './App.jsx'
 import LoginPage from './pages/login.jsx'
 import RegisterPage from './pages/register.jsx'
 import UserPage from './pages/user.jsx'
+
+import AboutPage from './pages/about.jsx'
+
 import ReactDOM from 'react-dom/client'
 import ErrorPage from './pages/error.jsx'
 import IntroPage from './pages/intro.jsx'
 import MainPage from './pages/main.jsx'
 import SearchPage from './pages/search.jsx'
+import CollectionPage from './pages/collection.jsx'
 import { AuthWrapper } from './components/context/auth_context.jsx'
 import "./styles/global.css"
 
@@ -39,7 +43,15 @@ const router = createBrowserRouter([
       {
         path:"/search",
         element: <SearchPage />
-      }
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,        
+      },
+      {
+        path:"/collection",
+        element: <CollectionPage />
+      },
     ]
   },
   {
