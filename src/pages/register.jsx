@@ -11,7 +11,7 @@ const RegisterPage = () => {
     const onFinish = async (values) => {
         const res= await registerAPI(values.username,values.fullname,values.email,values.password,values.phone, values.gender);
 
-        if(res ||res.data ){
+        if(res.data ){
             notification.success({
                 message: "Success register user",
                 description: "Register user thành công"
@@ -146,7 +146,7 @@ const RegisterPage = () => {
                                     },
                                 ]}
                             >
-                                <Input.Password placeholder="Password" style={{ fontSize: "large" }} />
+                                <Input placeholder="Password" style={{ fontSize: "large" }} />
                             </Form.Item>
 
                             <Form.Item
@@ -175,8 +175,8 @@ const RegisterPage = () => {
                             </Form.Item>
 
                             <Button onClick={() => form.submit()}  color="danger" style={{
-                                display: "block",       
-                                margin: "10px auto",    
+                                display: "block",
+                                margin: "10px auto",
                                 padding: "0px 20px",
                                 textAlign: "center",
                                 backgroundColor: "#B23F4C",

@@ -21,6 +21,7 @@ const Header = () =>{
     const  navigate= useNavigate()
     const handleLogout = async()=>{
         const  res= await logoutAPI();
+        console.log("message logout: ", user)
         if(res.data){
             //clear data
             localStorage.removeItem('access_token');
@@ -36,7 +37,7 @@ const Header = () =>{
             })
 
             message.success("Logout thanh cong");
-
+            
             navigate("/");
         }
     }
