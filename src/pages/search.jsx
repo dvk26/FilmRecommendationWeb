@@ -1,15 +1,19 @@
 import {useLocation, useNavigate} from 'react-router-dom'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import {Input, Button, Row, Col, Flex} from 'antd'
 import { SearchOutlined, ClockCircleOutlined, LikeOutlined, DislikeOutlined } from '@ant-design/icons';
 import { searchAPI } from "../services/api_service";
+import { AuthContext } from "../components/context/auth_context";
 import "./search.css"
 
 const SearchPage = () =>{
     const location = useLocation();
     const navigate= useNavigate();
 
-    const [prompt, setPrompt]= useState(location.state?.prompt);
+    const {prompt,setPrompt} = useContext(AuthContext)
+
+
+
 
     const [films, setFilms] = useState([]);
     const [error, setError] = useState(null);
@@ -26,31 +30,16 @@ const SearchPage = () =>{
     };
 
     useEffect(() => {
-        fetchFilmList(prompt);
-    }, [prompt]);
-
-
-    let new_prompt = "";
-    const handleSearch = (e) => {
-        
-        const value = e.target.value; // Lấy giá trị từ input
-        new_prompt=value // Cập nhật state
-        console.log("prompt: ", new_prompt);
-
-        navigate("/search", { state: { new_prompt } });
-    };
+        if (location.state && location.state.prompt) {
+            setPrompt(location.state.prompt);
+            fetchFilmList(prompt)
+        }
+    }, [location, setPrompt]);
 
 
     return(
         <div style={{paddingRight:"110px", paddingLeft:"110px"}}>
-            {/* <div className="search-container">
-                <Input
-                    defaultValue={prompt}
-                    suffix={<SearchOutlined style={{ color: "#fff" }} />}
-                    className="custom-input"
-                    onPressEnter={handleSearch}
-                />
-            </div> */}
+            {}
 
             {error && <p>Error: {error}</p>}
             {films.length > 0 ? (
@@ -77,8 +66,6 @@ const SearchPage = () =>{
                             {film.overview}
                             </p>
                         </div>
-                        
-
                         <div style={{position: "absolute", bottom: "0"}}>
                             <Button className= "myListButton" id="ButtonAbout" style={{marginBottom: "100px"}}> + My List</Button>
                             <Button className='dis_LikeButton' style={{marginLeft: "40px"}}><LikeOutlined /></Button>
@@ -88,7 +75,7 @@ const SearchPage = () =>{
                 </Row>
                 ))
                 ) : (
-                <p>No films found.</p>
+                <p>Waiting films found.</p>
             )}
         </div>
     )

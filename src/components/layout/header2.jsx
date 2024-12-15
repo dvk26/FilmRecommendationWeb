@@ -9,15 +9,20 @@ import "./header.css";
 const Header = () =>{
     const [current, setCurrent] = useState('');
     const {user,setUser} = useContext(AuthContext)
+    const {prompt,setPrompt} = useContext(AuthContext)
 
-    useEffect(() => {
-    console.log("User state updated:", user);
-    }, [user]);
 
     console.log("check data >>>>>>:",user)
     const onClick = (e) => {
         setCurrent(e.key);
     };
+    const handleSearch = (e) => {
+        
+        const value = e.target.value; // Lấy giá trị từ input
+        setPrompt(value);
+        navigate("/search", { state: { prompt: value } });
+    };
+
     const  navigate= useNavigate()
     const handleLogout = async()=>{
         const  res= await logoutAPI();
@@ -58,10 +63,11 @@ const Header = () =>{
         {
             label:
             <Input
-                    defaultValue={"prompt"}
+                    value={`${prompt}`}
+                    onChange={(e) => setPrompt(e.target.value)}
                     suffix={<SearchOutlined style={{ color: "#fff" }} />}
                     className="custom-input-header"
-                    // onPressEnter={handleSearch}
+                    onPressEnter={handleSearch}
             />,
             key: 'searchBar',
         },

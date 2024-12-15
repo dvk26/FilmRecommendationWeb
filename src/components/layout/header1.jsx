@@ -33,9 +33,7 @@ const Header = () =>{
                 avatar:"",
                 id:""
             })
-
             message.success("Logout thanh cong");
-
             navigate("/intro");
         }
     }

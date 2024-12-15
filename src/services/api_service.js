@@ -34,7 +34,7 @@ const loginAPI = (username,  password) =>{
 }
 
 const searchAPI = (Prompt) => {
-    const URL_BACKEND = "/api/v1/searches/{prompt}"
+    const URL_BACKEND = `/api/v1/searches/${Prompt}`
     const data = {
         Prompt: Prompt
     }

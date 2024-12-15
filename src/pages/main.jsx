@@ -1,20 +1,22 @@
 import { SearchOutlined } from '@ant-design/icons';
 import { Input, Space } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import {useState,useEffect} from "react"
+import {useState,useEffect,useContext} from "react"
+import { AuthContext } from "../components/context/auth_context";
 import './main.css'
 
 const MainPage = () => {
     const navigate= useNavigate();
+    const {prompt,setPrompt} = useContext(AuthContext)
+    
 
-    let prompt="";
+
     const handleSearch = (e) => {
         
-        const value = e.target.value; // Lấy giá trị từ input
-        prompt=value // Cập nhật state
-        console.log("prompt: ", prompt);
-
-        navigate("/search", { state: { prompt } });
+       const value = e.target.value; // Get the input value
+        setPrompt(value); // Update state
+        console.log("prompt: ", value); // Use the current input value
+        navigate("/search", { state: { prompt: value } }); // Pass the updated value
     };
 
     return(

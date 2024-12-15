@@ -13,6 +13,7 @@ export const AuthContext= createContext({
 
 export const AuthWrapper = (props) =>{
     const [isAppLoading, setIsAppLoading]= useState(true)
+    const [prompt, setPrompt]= useState("")
     const [user,setUser] = useState({
         email:"",
         phone:"",
@@ -25,7 +26,8 @@ export const AuthWrapper = (props) =>{
     return (
         <AuthContext.Provider value={{
             user,setUser,
-            isAppLoading, setIsAppLoading}}>
+            isAppLoading, setIsAppLoading,
+            prompt, setPrompt}}>
             {props.children}
         </AuthContext.Provider>
     )
