@@ -29,35 +29,35 @@ const IntroPage = () => {
     return (
         <div >
        
-            <div class="container">
+            <div className="container">
                 <img src={introPic} style={{width:"100%",height:"100%",margin:"auto"}} />
-                <p class="intro-text" style={{fontSize:"50px",bottom:"110px",right:"50px"}}>Movies that sync with your soul.</p>
+                <p className="intro-text" style={{fontSize:"50px",bottom:"110px",right:"50px"}}>Movies that sync with your soul.</p>
                 <button className="try-now-button">Try now</button>
             </div>
 
-            <div class="container" >
+            <div className="container" >
                 <h2>THỊNH HÀNH</h2>
-                <div class="movies-container">
-                    <div class="movie-item" style={{top: "110px"}}>
-                        <span class="movie-rank">2</span>
-                        <img src={movie2} alt="The Substance" class="movie-poster" />
+                <div className="movies-container">
+                    <div className="movie-item" style={{top: "110px"}}>
+                        <span className="movie-rank">2</span>
+                        <img src={movie2} alt="The Substance" className="movie-poster" />
                         
-                        <p class="movie-title">The Substance</p>
+                        <p className="movie-title">The Substance</p>
                     </div>
-                    <div class="movie-item">
-                        <span class="movie-rank">1</span>
-                            <img src={movie1} alt="Venom: The Last Dance" class="movie-poster" />
-                            <p class="movie-title">Venom: The Last Dance</p>
+                    <div className="movie-item">
+                        <span className="movie-rank">1</span>
+                            <img src={movie1} alt="Venom: The Last Dance" className="movie-poster" />
+                            <p className="movie-title">Venom: The Last Dance</p>
                         </div>
-                    <div class="movie-item" style={{top: "130px"}}>
-                        <span class="movie-rank">3</span>
-                        <img src={movie3} alt="Don't Move" class="movie-poster" />
-                        <p class="movie-title">Don't Move</p>
+                    <div className="movie-item" style={{top: "130px"}}>
+                        <span className="movie-rank">3</span>
+                        <img src={movie3} alt="Don't Move" className="movie-poster" />
+                        <p className="movie-title">Don't Move</p>
                     </div>
                 </div>
             </div>
 
-            <div class="container">
+            <div className="container">
                 <h2>TRỢ THỦ AI HOÀN HẢO</h2>
                 <img src={aiPolygon} width="100%" style={{margin: "auto"}}/>
                 <img src={Aicamera} style={{position:"absolute", bottom:"3%",right:"2%",width:"180px"}}/>
@@ -79,9 +79,9 @@ const IntroPage = () => {
                 <img src={iconTime} style={{position:"absolute",width:"60px",top:"81%",left:"39%"}}/>
             </div>
 
-            <div class="container" style={{padding:"50px"}}>
+            <div className="container" style={{padding:"50px"}}>
                 <img src={logo} style={{width:"460px",position: "relative"}}/>
-                <h2 class="intro-text" style={{fontSize:"119px",top:"98%",left:"54%"}}>MIUVIE</h2>
+                <h2 className="intro-text" style={{fontSize:"119px",top:"98%",left:"54%"}}>MIUVIE</h2>
                 <p2 style={{fontFamily:"Bagel Fat One",color:"#D4C5C5",fontSize:"50px",position:"absolute",top:"100%",left:"50%"}} >Let’s move vì MIUVIE!</p2>
                 
 
