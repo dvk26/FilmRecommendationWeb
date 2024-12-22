@@ -73,6 +73,10 @@ body {
     border-radius: 50px 50px 50px 50px;
 }
 
+:where(.css-dev-only-do-not-override-49qm).ant-dropdown .ant-dropdown-menu {
+    background-color: #4D4646;
+    border-radius: 20px;
+}
 
 /* Collection CSS */
 .sideBar {

@@ -1,18 +1,98 @@
 import {useLocation} from 'react-router-dom'
-import {useState} from 'react'
-import {Input, Button, Row, Col, Flex} from 'antd'
+import {Children, useState} from 'react'
+import {Collapse, Input, Button, Row, Col, Flex, Form} from 'antd'
 import { SearchOutlined, ClockCircleOutlined, LikeOutlined, DislikeOutlined } from '@ant-design/icons';
 import "./search.css"
 
-const SearchPage = () =>{
-    const location = useLocation();
-    const [prompt, setPrompt]= useState(location.state?.prompt);
+const CollectionPage = () =>{
+    const onFinish = (values) => {
+        console.log('Success:', values);
+    };
+    const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+    };
 
+    // const items = [
+    //     {
+    //         key: '1',
+    //         lable:  'This is panel header 1',
+    //         children: 
+            // <Form
+            //     name="basic"
+            //     labelCol={{
+            //         span: 8,
+            //     }}
+            //     wrapperCol={{
+            //         span: 16,
+            //     }}
+            //     style={{
+            //         maxWidth: 600,
+            //     }}
+            //     initialValues={{
+            //         remember: true,
+            //     }}
+            //     onFinish={onFinish}
+            //     onFinishFailed={onFinishFailed}
+            //     autoComplete="off"
+            // >
+            //     <Form.Item
+            //     label="collection"
+            //     name="new_collection"
+            //     rules={[
+            //         {
+            //         required: true,
+            //         message: 'New collection',
+            //         },
+            //     ]}
+            //     >
+            //     <Input />
+            //     </Form.Item>
+            // </Form>
+    //     },
+    // ];
+    const text = `ABCDEF`;
+    const items = [
+        {
+          key: '1',
+          label: 'Thêm',
+          children: 
+          <Form
+                name="add_collection"
+                style={{
+                    maxWidth: 600,
+                }}
+                onFinish={onFinish}
+                onFinishFailed={onFinishFailed}
+                autoComplete="off"
+            >
+                <Form.Item
+                    label={null}
+                    name="new_collection"
+                    
+                    rules={[
+                        {
+                        required: true,
+                        },
+                    ]}
+                >
+                <Input placeholder="New collection"/>
+                </Form.Item>
 
-    const handleSearch=(e) =>{
-        console.log(e.target.value);
-    }
+                <Form.Item label={null}>
+                    <Button type="primary" htmlType="submit">
+                        Submit
+                    </Button>
+                </Form.Item>
+            </Form>
+          ,
+          showArrow: false,
+          style:{textAlign:"center"}
+        },
+      ];
 
+    const onChange = (key) => {
+        console.log(key);
+      };
 
     return(
         <div style={{paddingLeft:"90px"}}>
@@ -78,9 +158,10 @@ const SearchPage = () =>{
                 <Col span={6} className='sideBar' style={{padding: "0px 40px 0px 40px"}}>
                     <p className='siteContent' style={{textAlign: "center", fontWeight: "bold", fontSize: "35px", marginTop: "40px"}}>Danh sách của tôi</p>
                     <div className='container' style={{justifyContent: "center", marginTop: "15px", marginBottom: "25px"}}>
-                        <Button className= "addButton">Thêm</Button>
+                        <Collapse items={items} onChange={onChange} style={{backgroundColor: "white", fontSize:"20px", width:"200px"}}/>
                     </div>
 
+                    {/* <Collapse  items={items} defaultActiveKey={['1']} onChange={onChange} style={{color:"white"}} />; */}
                     <ul style={{paddingLeft:"40px", listStyleType: "square", listStyle: "square inside", fontSize: "28px", color: "white", lineHeight: 2, textIndent: "-40px"}}>
                         <li><a href="">Phim Tết</a></li>
                         <li><a href="">Phim kinh dị</a></li>
@@ -94,4 +175,4 @@ const SearchPage = () =>{
     )
 }
 
-export default SearchPage;
+export default CollectionPage;

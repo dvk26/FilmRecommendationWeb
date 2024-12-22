@@ -2,15 +2,16 @@
 import { SearchOutlined, HomeFilled, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Divider, Menu, message, Input, Flex } from 'antd';
 import { useContext, useEffect, useState } from 'react';
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { logoutAPI } from "../../services/api_service";
 import { AuthContext } from "../context/auth_context";
 import "./header.css";
 const Header = () =>{
     const [current, setCurrent] = useState('');
-    const {user,setUser} = useContext(AuthContext)
-    const {prompt,setPrompt} = useContext(AuthContext)
-
+    const {user,setUser} = useContext(AuthContext);
+    const {prompt,setPrompt} = useContext(AuthContext);
+    const location = useLocation();
+    const isHomePage = location.pathname === '/main';
 
     console.log("check data >>>>>>:",user)
     const onClick = (e) => {
@@ -60,16 +61,16 @@ const Header = () =>{
             </NavLink>,
             key: 'intro',
         },
-        {
-            label:
-            <Input
-                    value={`${prompt}`}
-                    onChange={(e) => setPrompt(e.target.value)}
-                    suffix={<SearchOutlined style={{ color: "#fff" }} />}
-                    className="custom-input-header"
-                    onPressEnter={handleSearch}
-            />,
-            key: 'searchBar',
+        !isHomePage && {
+                            label:
+                            <Input
+                                    value={`${prompt}`}
+                                    onChange={(e) => setPrompt(e.target.value)}
+                                    suffix={<SearchOutlined style={{ color: "#fff" }} />}
+                                    className="custom-input-header"
+                                    onPressEnter={handleSearch}
+                            />,
+                            key: 'searchBar',
         },
         {
             label: <NavLink to="/main"><img src='./Home.svg'></img></NavLink>,
