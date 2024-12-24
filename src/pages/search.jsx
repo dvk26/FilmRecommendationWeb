@@ -1,6 +1,6 @@
 import {useLocation, useNavigate} from 'react-router-dom'
 import {useState, useEffect, useContext} from 'react'
-import {Input, Radio, Button, Row, Col, Flex, Dropdown} from 'antd'
+import {Input, Radio, Button, Row, Col, Flex, Dropdown, Select, Form, Checkbox} from 'antd'
 import { SearchOutlined, ClockCircleOutlined, LikeOutlined, DislikeOutlined } from '@ant-design/icons';
 import { searchAPI } from "../services/api_service";
 import { AuthContext } from "../components/context/auth_context";
@@ -57,228 +57,83 @@ const SearchPage = () =>{
         setDisLikeActive(true); 
     };
 
-    console.log(active_like);
+    const onFinish = (values) => {
+        console.log("Selected values:", values["checkbox-group"]);
+    };
+
     const items = [
         {
-            key: '1',
+            key: "1",
             label: (
-                <div>
-                    <p className='siteTitle' style={{fontSize:"25px"}}>Danh sách của tôi</p>
-                    <hr />
+                <div className="dropdownContent" style={{
+                    width: "250px", 
+                    height: "210px",
+                    overflowX: "hidden",
+                    overflowY: "hidden"
+                     
+                }}>
+                    <p className="siteTitle" style={{ fontSize: "25px", margin: "0" }}>
+                        Danh sách của tôi
+                    </p>
+                    <hr style={{ margin: "0 0 10px 0" }} />
 
-                    <ul
-                        style={{
-                            paddingLeft: "20px",
-                            listStyle: "square",
-                            color: "white",
-                            width: "200px", 
-                            maxHeight:"90px",
-                            overflowY: "auto", 
-                            overflowX: "hidden", 
+                    <Form
+                        name="checkboxForm"
+                        onFinish={onFinish}
+                        initialValues={{
+                            "checkbox-group": [],
                         }}
                     >
-                        <li
-                            style={{
-                                alignItems: "center",
-                                maxWidth: "200px",
+                        <Checkbox.Group 
+                            onClick={(e) => {
+                                e.stopPropagation(); // Prevent dropdown from closing
                             }}
-                        >
-                            <Row style={{ width: "100%" }}>
-                                <Col span={21}>
-                                    <p
-                                        className='siteContent' 
-                                        style={{
-                                            fontSize:"20px",
-                                            margin: 0,
-                                            overflow: "hidden",
-                                            whiteSpace: "nowrap",
-                                            textOverflow: "ellipsis",
-                                            width: "100%",
-                                        }}
-                                    >
-                                        Collection 1111111111111111111111
-                                    </p>
-                                </Col>
-                                <Col span={1}>
-                                    <Radio
-                                        value={1}
-                                        checked={value === 1}
-                                        onClick={() => handleClickRadio(1)}
-                                        style={{ marginTop: "5px" }}
-                                    />
-                                </Col>
-                            </Row>
-                        </li>
 
-                        <li
                             style={{
-                                alignItems: "center",
-                                maxWidth: "200px",
+                                maxHeight:"100px",
+                                overflowY: "auto", 
+                                overflowX: "hidden",
+                                whiteSpace: "nowrap",
+                                textOverflow: "ellipsis",
+                                width: "100%"
                             }}
                         >
-                            <Row style={{ width: "100%" }}>
-                                <Col span={21}>
-                                    <p
-                                        className='siteContent' 
-                                        style={{
-                                            fontSize:"20px",
-                                            margin: 0,
-                                            overflow: "hidden",
-                                            whiteSpace: "nowrap",
-                                            textOverflow: "ellipsis",
-                                            width: "100%",
-                                        }}
-                                    >
-                                        Collection 2
-                                    </p>
-                                </Col>
-                                <Col span={1}>
-                                    <Radio
-                                        value={1}
-                                        checked={value === 2}
-                                        onClick={() => handleClickRadio(2)}
-                                        style={{ marginTop: "5px" }}
-                                    />
-                                </Col>
-                            </Row>
-                        </li>
-
-                        <li
-                            style={{
-                                alignItems: "center",
-                                maxWidth: "200px",
-                            }}
-                        >
-                            <Row style={{ width: "100%" }}>
-                                <Col span={21}>
-                                    <p
-                                        className='siteContent'
-                                        style={{
-                                            fontSize:"20px",
-                                            margin: 0,
-                                            overflow: "hidden",
-                                            whiteSpace: "nowrap",
-                                            textOverflow: "ellipsis",
-                                            width: "100%",
-                                        }}
-                                    >
-                                        Collection 3
-                                    </p>
-                                </Col>
-                                <Col span={1}>
-                                    <Radio
-                                        value={1}
-                                        checked={value === 3}
-                                        onClick={() => handleClickRadio(3)}
-                                        style={{ marginTop: "5px" }}
-                                    />
-                                </Col>
-                            </Row>
-                        </li>
-
-                        <li
-                            style={{
-                                alignItems: "center",
-                                maxWidth: "200px",
-                            }}
-                        >
-                            <Row style={{ width: "100%" }}>
-                                <Col span={21}>
-                                    <p
-                                        className='siteContent'
-                                        style={{
-                                            fontSize:"20px",
-                                            margin: 0,
-                                            overflow: "hidden",
-                                            whiteSpace: "nowrap",
-                                            textOverflow: "ellipsis",
-                                            width: "100%",
-                                        }}
-                                    >
-                                        Collection 3
-                                    </p>
-                                </Col>
-                                <Col span={1}>
-                                    <Radio
-                                        value={1}
-                                        checked={value === 4}
-                                        onClick={() => handleClickRadio(4)}
-                                        style={{ marginTop: "5px" }}
-                                    />
-                                </Col>
-                            </Row>
-                        </li>
-                    </ul>
-                    {/* <Space direction="vertical" > */}
-                    {/* <ul maxWidth="100" style={{paddingLeft:"20px", listStyle:"square", color:"white"}}>
-                        <li style={{alignItems: "center", whiteSpace:"nowrap"}}>
                             <Row>
-                                <Col span={5}>
-                                    <p>Collection 1111111111111111111111111</p>
+                                <Col span={24}>
+                                    <Checkbox value="Phim Tết" style={{ marginBottom: "10px"}}>
+                                        <p>Phim Tết11111111111 11111111111111111111111111111111111111111111111111111111111111111111</p>
+                                    </Checkbox>
                                 </Col>
 
-                                <Col span={3}>
-                                    <Radio
-                                        value={1}
-                                        checked={value === 1}
-                                        onClick={() => handleClick(1)}
-                                        style={{marginTop:"5px"}}
-                                    />
+                                <Col span={24}>
+                                    <Checkbox value="Phim kinh dị" style={{ marginBottom: "10px" }}>
+                                        <p>Phim kinh dị</p>
+                                    </Checkbox>
                                 </Col>
-                            </Row>
-                        </li>
-                        {/* <li style={{ display: "flex", alignItems: "center", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>
-                            <Row>
-                                <Col span={21}>
-                                    <p style={{ margin: 0, overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>
-                                        Collection 1111111111
-                                    </p>
+                                
+                                <Col span={24}>
+                                    <Checkbox value="Ở ven chờ" style={{ marginBottom: "10px" }}>
+                                        <p>Ở ven chờ</p>
+                                    </Checkbox>
                                 </Col>
-                                <Col span={1}>
-                                    <Radio
-                                        value={1}
-                                        checked={value === 1}
-                                        onClick={() => handleClick(1)}
-                                        style={{ marginTop: "5px" }}
-                                    />
+
+                                <Col span={24}>
+                                    <Checkbox value="New colletion" style={{ marginBottom: "10px" }}>
+                                        <p>New Collection</p>
+                                    </Checkbox>
                                 </Col>
                             </Row>
-                        </li> 
-
-                        <li>
-                            <Space direction="horizontal">
-                                <p>Collection 2</p>
-                                <Radio
-                                    value={2}
-                                    checked={value === 2}
-                                    onClick={() => handleClick(2)}
-                                />
-                            </Space>
-                        </li>
-
-                        <li>
-                        <Space direction="horizontal">
-                            <p>Collection 3</p>
-                            <Radio
-                                value={3}
-                                checked={value === 3}
-                                onClick={() => handleClick(3)}
-                            />
-                        </Space>
-                        </li>
-
-                        <li>
-                        <Space direction="horizontal">
-                            <p>Collection 4</p>
-                            <Radio
-                                value={4}
-                                checked={value === 4}
-                                onClick={() => handleClick(4)}
-                            />
-                        </Space>
-                        </li>
-                    </ul> */}
-                    {/* </Space> */}
+                        </Checkbox.Group>
+                        
+                        <div style={{ display: "flex", justifyContent: "space-around", marginTop: "20px" }}>
+                            <Button htmlType="button" style={{ background: "#fff", border: "1px solid #ccc" }}>
+                                Hủy
+                            </Button>
+                            <Button htmlType="submit" type="primary" style={{ background: "#28a745", border: "none" }}>
+                                Lưu
+                            </Button>
+                        </div>
+                    </Form>
                 </div>
             ),
         },
@@ -293,7 +148,16 @@ const SearchPage = () =>{
                 films.map((film, index) => (
                 <Row key={index}>
                     <Col span={8} style={{paddingTop: "40px"}}>
-                        <img style={{width:"100%", maxHeight:"85%", borderRadius: "5%"}} src={film.imageUrl} alt="Poster1"/>    
+                        {/* <img style={{width:"100%", maxHeight:"85%", borderRadius: "5%"}} src={film.imageUrl} alt="/GroupPhoto.svg"/>     */}
+                        <img
+                            style={{ width: "100%", maxHeight: "85%", borderRadius: "5%" }}
+                            src={film.imageUrl || "/testGrayPicture.svg"} // Use fallback if `imageUrl` is null
+                            alt="Group Photo"
+                            onError={(e) => {
+                                e.target.onerror = null; // Prevent infinite loop in case fallback image also fails
+                                e.target.src = "/testGrayPicture.svg"; // Set fallback image
+                            }}
+                        />
                     </Col>
 
                     <Col span={16} style={{paddingTop: "40px", paddingLeft: "70px"}}>

@@ -13,7 +13,7 @@ const Header = () =>{
     const location = useLocation();
     const isHomePage = location.pathname === '/main';
 
-    console.log("check data >>>>>>:",user)
+    // console.log("check data >>>>>>:",user)
     const onClick = (e) => {
         setCurrent(e.key);
     };

@@ -49,9 +49,6 @@ const AboutPage = () => {
                 </Col>
 
                 <Col span={9}>
-                    {/* <div>
-                        
-                    </div> */}
                     <Flex  style={{paddingTop: "90px"}} justify={"flex-end"} align={"flex-start"}>
                         <img style={{width: "90%"}} src="/GroupPhoto.svg" alt="GroupPhoto"/>
                     </Flex>
