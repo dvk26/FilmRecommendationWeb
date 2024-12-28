@@ -16,7 +16,7 @@ const App = () => {
 
   const fetchUserInfo = async () => {
     const res = await getAccountAPI();
-    console.log("check res:",res.data);
+    
     if(res.data){
       setUser(res.data)
     }

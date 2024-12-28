@@ -33,6 +33,7 @@ const loginAPI = (username,  password) =>{
     return axios.post(URL_BACKEND, data)
 }
 
+//Search(receive prompt from header2) and main(home) page
 const searchAPI = (Prompt) => {
     const URL_BACKEND = `/api/v1/searches/${Prompt}`
     const data = {
@@ -42,7 +43,80 @@ const searchAPI = (Prompt) => {
     return axios.post(URL_BACKEND, data)
 }
 
-export{
-    getAccountAPI, logoutAPI, registerAPI, loginAPI, searchAPI
+//Search page
+const likeAPI = (filmId) => {
+    const URL_BACKEND = `/api/v1/films/${filmId}/likes`
+    const data = {
+        filmId: filmId
+    }
 
+    return axios.post(URL_BACKEND, data) 
+}
+
+//Search page
+const disLikeAPI = (filmId) => {
+    const URL_BACKEND = `/api/v1/films/${filmId}/disLikes`
+    const data = {
+        filmId: filmId
+    }
+
+    return axios.post(URL_BACKEND, data) 
+}
+
+//Collection page
+const createCollectionAPI = (name, userId) => {
+    const URL_BACKEND = `/api/v1/collections`
+    const data = {
+        name: name,
+        userId: userId
+    }
+
+    return axios.post(URL_BACKEND, data)
+}
+
+//Search and collection page
+const getCollectionAPI = (userId) => {
+    const URL_BACKEND = `/api/v1/collections/user/${userId}`
+    const data = {
+        userId: userId
+    }
+
+    return axios.get(URL_BACKEND, data)
+}
+
+//Search page
+const addToCollectionAPI = (filmId, collectionId) => {
+    const URL_BACKEND = `/api/collectionfilms/CreateAndRemove`
+    const data = {
+        filmId: filmId,
+        addCollections: collectionId
+    }
+
+    return axios.post(URL_BACKEND, data)
+}
+
+//Collection page
+const getFilmsInCollectionAPI = (userId, collectionId) => {
+    const URL_BACKEND = `/api/collectionfilms/get/${userId}/${collectionId}`
+    const data = {
+        userId: userId,
+        collectionId: collectionId
+    }
+
+    return axios.get(URL_BACKEND, data)
+}
+
+//Search page
+const getTickedCollectionsAPI = (filmId) => {
+    const URL_BACKEND = `/api/collectionfilms/tickedCollection/${filmId}`
+    const data = {
+        filmId: filmId
+    }
+
+    return axios.get(URL_BACKEND, data)
+}
+
+export{
+    getAccountAPI, logoutAPI, registerAPI, loginAPI, searchAPI, likeAPI, disLikeAPI, createCollectionAPI, getCollectionAPI,
+    addToCollectionAPI, getFilmsInCollectionAPI, getTickedCollectionsAPI
 }
