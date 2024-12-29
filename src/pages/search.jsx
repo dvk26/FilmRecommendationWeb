@@ -18,6 +18,8 @@ const SearchPage = () =>{
     const [filmStates, setFilmStates] = useState({});
     const [error, setError] = useState(null);
 
+    const [tickedCollection, setTickedCollection] = useState({});
+
     const fetchFilmList = async (prompt) => {
         try {
             const response = await searchAPI(prompt);
@@ -61,34 +63,29 @@ const SearchPage = () =>{
         fetchCollection();
     }, []);
 
-    const createFilmCollectionsMap = async (films) => {
+    const createFilmCollectionsMap = async () => {
         const filmCollectionsMap = {};
-        // const collections = await getTickedCollectionsAPI(3); // Fetch the API data
-        // console.log(collections.data)
-        // Use Promise.all to fetch data for all films concurrently
+        
         await Promise.all(
             films.map(async (film) => {
-                // console.log(film.id)
-                const collections = await getTickedCollectionsAPI(film.id); // Fetch the API data
-                // console.log(collections.data)
-                filmCollectionsMap[film.id] = collections.data; // Set the id as the key and collections as the value
+                const collections = await getTickedCollectionsAPI(film.id); 
+                // const temp = collections.data.map(item => item.id);
+                // console.log(temp);
+                filmCollectionsMap[film.id] = collections.data.map(item => item.id); 
             })
-            //Tui muốn tạo map dựa theo film.id để trong loop tui đặt dòng 185: "checkbox_group": [], . thành "checkbox_group": map[film.id],
         );
-    
-        return filmCollectionsMap;
+
+        setTickedCollection(filmCollectionsMap);
     };
 
-    createFilmCollectionsMap(films).then((map) => {
-        console.log(map);
-        // Example output:
-        // {
-        //     1: [/* List from getTickedCollectionsAPI(1) */],
-        //     2: [/* List from getTickedCollectionsAPI(2) */],
-        //     3: [/* List from getTickedCollectionsAPI(3) */],
-        // }
-    });
+    useEffect(() => {
+        if (films && films.length > 0) {
+            createFilmCollectionsMap();
+        }
+    }, [films]);
+    console.log(tickedCollection);
 
+    //Handle Like button
     const handleClickLike = (filmId) => {
         setFilmStates((prevState) => ({
           ...prevState,
@@ -101,7 +98,7 @@ const SearchPage = () =>{
         likeAPI(filmId);
     };
     
-    // Handle "Dislike" button click
+    //Handle Dislike button
     const handleClickDisLike = (filmId) => {
         setFilmStates((prevState) => ({
             ...prevState,
@@ -114,6 +111,7 @@ const SearchPage = () =>{
         disLikeAPI(filmId);
     };
 
+    //Handle submit form in collapse
     const onFinish = (values, filmId) => {
         console.log(values.checkbox_group);
         console.log("Film ID:", filmId);
@@ -182,8 +180,9 @@ const SearchPage = () =>{
                                                 name={`checkboxForm-${film.id}`}
                                                 onFinish={(values) => onFinish(values, film.id)}
                                                 initialValues={{
-                                                    "checkbox_group": [],
+                                                    "checkbox_group": tickedCollection[film.id],
                                                 }}
+                                                style={{minHeight:"150px"}}
                                                 >
                                                     <FormItem name="checkbox_group">
                                                         <Checkbox.Group
@@ -197,6 +196,7 @@ const SearchPage = () =>{
                                                             whiteSpace: "nowrap",
                                                             textOverflow: "ellipsis",
                                                             width: "100%",
+                                                            minHeight:"100px"
                                                             }}
                                                         >
                                                             
@@ -225,7 +225,7 @@ const SearchPage = () =>{
                                                     >
                                                         <Button
                                                             htmlType="button"
-                                                            style={{ background: "#fff", border: "1px solid #ccc" }}
+                                                            style={{ background: "#fff", border: "1px solid #ccc", marginTop: "auto"}}
                                                         >
                                                         Hủy
                                                         </Button>
@@ -234,7 +234,7 @@ const SearchPage = () =>{
                                                             htmlType="submit"
                                                             type="primary"
                                                             style={{ background: "#28a745", border: "none" }}
-                                                            {...Array.isArray(filmsInCollection) && filmsInCollection.length > 0 ? "" : disabled}
+                                                            disabled={!(Array.isArray(filmsInCollection) && filmsInCollection.length > 0)}
                                                         >
                                                         Lưu
                                                         </Button>
