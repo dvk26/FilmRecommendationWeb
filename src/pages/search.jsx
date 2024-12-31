@@ -128,11 +128,15 @@ const SearchPage = () =>{
                 films.map((film, index) => (
                 <Row key={index}>
                     <Col span={8} style={{paddingTop: "40px"}}>
-                        <img
-                            style={{ width: "100%", maxHeight: "85%", borderRadius: "5%" }}
-                            src={film.imageUrl || "/testGrayPicture.svg"}
-                            alt="Poster"
-                        />
+                    <img
+                        style={{ width: "100%", maxHeight: "85%", borderRadius: "5%" }}
+                        src={
+                            film.imageUrl === "https://image.tmdb.org/t/p/w500null" || !film.imageUrl
+                                ? "/testGrayPicture.svg"
+                                : film.imageUrl
+                        }
+                        alt="Poster"
+                    />
                     </Col>
 
                     <Col span={16} style={{paddingTop: "40px", paddingLeft: "70px"}}>

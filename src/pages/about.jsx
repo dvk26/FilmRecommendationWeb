@@ -50,7 +50,7 @@ const AboutPage = () => {
 
                 <Col span={9}>
                     <Flex  style={{paddingTop: "90px"}} justify={"flex-end"} align={"flex-start"}>
-                        <img style={{width: "90%"}} src="/GroupPhoto.svg" alt="GroupPhoto"/>
+                        <img style={{width: "90%", height: "530px", borderRadius: "10%"}} src="/ML_GroupPicture.jpg" alt="GroupPhoto"/>
                     </Flex>
                 </Col>
 

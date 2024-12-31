@@ -104,12 +104,15 @@ const CollectionPage = () =>{
                         currentCollectionFilms.map((collection) => (
                             <Row style={{marginTop: "30px"}}>
                                 <Col span={8}>
-                                    <img
-                                        style={{ width: "100%", maxHeight: "85%", borderRadius: "5%" }}
-                                        src={collection.imageUrl || "/testGrayPicture.svg"}
-                                        alt="Poster"
-                                    />
-                                    {/* <img style={{width:"100%", maxHeight:"85%", borderRadius: "5%"}} src="" alt="Poster1"/>     */}
+                                <img
+                                    style={{ width: "100%", maxHeight: "85%", borderRadius: "5%" }}
+                                    src={
+                                        film.imageUrl === "https://image.tmdb.org/t/p/w500null" || !film.imageUrl
+                                            ? "/testGrayPicture.svg"
+                                            : film.imageUrl
+                                    }
+                                    alt="Poster"
+                                />
                                 </Col>
 
                                 <Col span={15} style={{paddingLeft: "30px"}}>
