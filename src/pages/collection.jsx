@@ -107,9 +107,9 @@ const CollectionPage = () =>{
                                 <img
                                     style={{ width: "100%", maxHeight: "85%", borderRadius: "5%" }}
                                     src={
-                                        film.imageUrl === "https://image.tmdb.org/t/p/w500null" || !film.imageUrl
+                                        collection.imageUrl === "https://image.tmdb.org/t/p/w500null" || !collection.imageUrl
                                             ? "/testGrayPicture.svg"
-                                            : film.imageUrl
+                                            : collection.imageUrl
                                     }
                                     alt="Poster"
                                 />
