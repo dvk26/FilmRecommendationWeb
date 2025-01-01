@@ -5,12 +5,13 @@ body {
 }
 
 .login-form {
-    width: 650px;
-    height: 90%;
+    width: 600px;
+    height: 70%;
+    margin-top: 70px;
     /* Độ rộng của form */
     padding: 20px;
     /* Khoảng cách bên trong */
-    border-radius: 10px;
+    border-radius: 4%;
     /* Bo góc */
     background: rgba(255, 255, 255, 0.2);
     /* Nền mờ với độ trong suốt */
@@ -18,7 +19,7 @@ body {
     /* Làm mờ nền phía sau */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     /* Tạo bóng nhẹ */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
     /* Đường viền trong suốt */
     display: flex;
     justify-content: center;
@@ -26,6 +27,18 @@ body {
     align-items: center;
     color: #fff;
     font-size: xx-large;
-    margin: 40px;
-    padding: 20px
+}
+
+:where(.css-dev-only-do-not-override-49qm).ant-input-outlined {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px 50px;
+    height: 80px
+}
+
+:where(.css-dev-only-do-not-override-49qm).ant-input-outlined:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+:where(.css-dev-only-do-not-override-49qm).ant-input-outlined:focus {
+    background: rgba(255, 255, 255, 0.2);
 }
