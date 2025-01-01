@@ -9,36 +9,32 @@ const RegisterPage = () => {
     const navigate = useNavigate();
     const [form]= Form.useForm();
     const onFinish = async (values) => {
-        const res= await registerAPI(values.username,values.fullname,values.email,values.password,values.phone, values.gender);
-
-        if(res.data ){
-            notification.success({
-                message: "Success register user",
-                description: "Register user thành công"
-            })
-            navigate("/login")
-            }
-        else{
+        if (values.password !== values.password_1) {
             notification.error({
-            message:"Error register user",
-            description: JSON.stringify(res.message)
-        })
+                message:"Error register user",
+                description: "Password không khớp"
+            })
         }
+        else {
+            const res= await registerAPI(values.username,values.email,values.password);
+
+            if(res.data ){
+                notification.success({
+                    message: "Success register user",
+                    description: "Register user thành công"
+                })
+                navigate("/login")
+                }
+            else{
+                notification.error({
+                message:"Error register user",
+                description: JSON.stringify(res.message)
+            })
+            }
+        }
+        
     }
-    const gender_options = [
-        {
-            value: 'MALE',
-            label: 'Male',
-        },
-        {
-            value: 'FEMALE',
-            label: 'Female',
-        },
-        {
-            value: 'OTHER',
-            label: 'Other',
-        },
-    ];
+
     const location = useLocation();
 
     useEffect(() => {
@@ -97,26 +93,11 @@ const RegisterPage = () => {
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Please input your username!",
+                                        message: "Phần này không được để trống!",
                                     },
                                 ]}
                             >
-                                <Input placeholder="Username"style={{ fontSize: "large" }} />
-                            </Form.Item>
-
-                            <Form.Item
-                                name="fullname"
-                                style={{
-                                    fontSize:"x-large",
-                                }}
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: "Please input your fullname!",
-                                    },
-                                ]}
-                            >
-                                <Input placeholder="Fullname" style={{ fontSize: "large" }}/>
+                                <Input placeholder="Tên đăng nhập"style={{ fontSize: "large" }} />
                             </Form.Item>
 
                             <Form.Item
@@ -127,7 +108,7 @@ const RegisterPage = () => {
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Please input your email!",
+                                        message: "Phần này không được để trống!",
                                     },
                                 ]}
                             >
@@ -142,36 +123,26 @@ const RegisterPage = () => {
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Please input your password!",
+                                        message: "Phần này không được để trống!",
                                     },
                                 ]}
                             >
-                                <Input placeholder="Password" style={{ fontSize: "large" }} />
+                                <Input placeholder="Mật khẩu" style={{ fontSize: "large" }} />
                             </Form.Item>
-
+                            
                             <Form.Item
-                                name="phone"
+                                name="password_1"
                                 style={{
                                     fontSize:"x-large",
                                 }}
                                 rules={[
                                     {
-                                        pattern: new RegExp(/\d+/g),
-                                        message: "Wrong format!",
+                                        required: true,
+                                        message: "Phần này không được để trống!",
                                     },
                                 ]}
                             >
-                                <Input placeholder="Phone" style={{ fontSize: "large" }}/>
-                            </Form.Item>
-
-                            <Form.Item
-                                name="gender"
-                                style={{
-                                    fontSize:"x-large",
-                                }}
-                                rules={[{ required: true, message: "Please select your gender!" }]}
-                            >
-                                <Select defaultValue="Gender" options={gender_options} style={{ fontSize: "x-large" }}/>
+                                <Input placeholder="Nhập lại mật khẩu" style={{ fontSize: "large" }} />
                             </Form.Item>
 
                             <Button onClick={() => form.submit()}  color="danger" style={{

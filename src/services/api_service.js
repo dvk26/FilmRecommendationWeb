@@ -9,27 +9,24 @@ const logoutAPI = () =>{
     const URL_BACKEND = "/api/v1/auth/logout"
     return axios.post(URL_BACKEND)
 }
-const registerAPI = (username,fullname,email,password,phone, gender) =>{
+const registerAPI = (username,email,password) =>{
     const URL_BACKEND = "/api/v1/auth/register"
     const data = {
         userName: username,
-        fullName: fullname,
         email:email,
-        phone:phone,
-        gender: gender,
         password: password
     }
     return axios.post(URL_BACKEND,data)
 }
 const loginAPI = (username,  password) =>{
     const URL_BACKEND = "/api/v1/auth/login"
-    console.log("check api nhe", username)
-    console.log("check api nhe", password)
+    // console.log("check api nhe", username)
+    // console.log("check api nhe", password)
     const data = {
         userName: username,
         password: password
     }
-    console.log(data)
+    // console.log(data)
     return axios.post(URL_BACKEND, data)
 }
 
