@@ -285,7 +285,7 @@ const SearchPage = () =>{
                 </Row>
                 ))
                 ) : (
-                <p>Waiting films found.</p>
+                <p>Phim của bạn đang được tìm kiếm. Vui lòng chờ</p>
             )}
         </div>
     )

@@ -5,9 +5,9 @@ body {
 }
 
 .login-form {
-    width: 600px;
+    width: 35vw;
     height: 70%;
-    margin-top: 70px;
+    margin: 10% auto;
     /* Độ rộng của form */
     padding: 20px;
     /* Khoảng cách bên trong */

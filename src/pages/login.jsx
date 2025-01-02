@@ -37,24 +37,24 @@ const LoginPage = () => {
     return (
         <div className="login-page">
             <Row style={{height:"100vh", overflowY:"hidden"}}>
-                <Col span={13}>
+                <Col span={12}>
                     <img
                             src= "/LoginPic.png"
 
                             alt="Signup Illignup.pngustration" 
                             style={{
                                 height:"100%",
-                                width:"700px",
+                                width:"100%",
                                 display: "block",      // Đảm bảo hình ảnh là một block element
                             }}
                     />
                 </Col>
 
-                <Col span={11} style={{
+                <Col span={12} style={{
                     margin: "0px",
                     padding: "0px"
                 }}>
-                    <div className="login-form" >
+                    <div className="login-form">
                         <h2 className="siteTitle" style={{paddingLeft:"10px", color:"white"}}>Đăng nhập</h2>
                         <Form
                             layout="vertical"
@@ -77,7 +77,7 @@ const LoginPage = () => {
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Please input your username!",
+                                        message: "Vui lòng không để trống mục này!",
                                     },
                                 ]}
                             >
@@ -91,7 +91,7 @@ const LoginPage = () => {
                                 rules={[
                                     {
                                     required: true,
-                                    message: 'Please input your password!',
+                                    message: 'Vui lòng không để trống mục này!',
                                     },
                                 ]}
                                 >
@@ -101,7 +101,7 @@ const LoginPage = () => {
                             </Form.Item>
                             
                             <div style={{display:"flex", padding:"0 10px 0 10px"}}>
-                                <Form.Item name="remember" label={null}>
+                                <Form.Item name="remember">
                                     <Checkbox className="siteContent" style={{fontSize:"20px"}}>Ghi nhớ tôi</Checkbox>
                                 </Form.Item>
 
@@ -109,8 +109,8 @@ const LoginPage = () => {
                             </div>
                             
                             <div style={{display: "flex", justifyContent: "center", textAlign: "center" , width:"100%", marginBottom:"15px"}}>
-                                <Button style={{ fontSize: "x-large",height:"90px" , width:"100%", borderRadius:"50px 50px", backgroundColor:"#B23F4C", border: ".5px solid white"}} onClick={() => { form.submit(); }} type="primary">
-                                    Đăng nhập
+                                <Button style={{ height:"90px" , width:"100%", borderRadius:"50px 50px", backgroundColor:"#B23F4C", border: ".5px solid white"}} onClick={() => { form.submit(); }} type="primary">
+                                    <p style={{fontSize: "x-large", fontWeight:"bold"}}>Đăng nhập</p>
                                 </Button>
                             </div>
 

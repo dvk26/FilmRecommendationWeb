@@ -41,7 +41,7 @@ const Header = () =>{
 
             })
 
-            message.success("Logout thanh cong");
+            message.success("Đăng xuất thành công");
 
             navigate("/");
         }
@@ -89,7 +89,7 @@ const Header = () =>{
         
         {
             label: 
-            <Flex>
+            <Flex style={{maxWidth:"120px", overflowX:"hidden"}}>
                 <img src="./Avatar.svg" alt="" style={{maxWidth:"50px", maxHeight:"50px"}}/>
                 <p style={{fontSize: "20px", paddingTop: "5px", marginLeft: "10px", fontWeight: "bold"}}>{user.userName}</p>
             </Flex>,

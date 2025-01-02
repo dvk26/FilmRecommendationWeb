@@ -67,8 +67,6 @@ p {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   color: #FFFFFF;
-  
-  margin-top: 40px;
 }
 
 .try-now-button:hover {

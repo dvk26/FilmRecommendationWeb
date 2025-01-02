@@ -29,10 +29,10 @@ const IntroPage = () => {
     return (
         <div >
        
-            <div className="container" style={{display:"flex", flexDirection:"column", marginBottom:"40px", marginTop:"30px"}}>
-                <img src={introPic} style={{width:"100%",height:"100%",margin:"auto", opacity:"0.7"}} />
+            <div className="container" style={{display:"flex", flexDirection:"column", marginBottom:"20px", marginTop:"20px"}}>
+                <img src={introPic} style={{width:"100%",height:"71vh",margin:"auto", opacity:"0.7"}} />
 
-                <div style={{position:"absolute", height:"65%", width:"95%"}}>
+                <div style={{position:"absolute", height:"80%", width:"95%"}}>
                     <p style={{height: "75%"}}></p>
                     <div style={{display:"flex"}}>
                         <p style={{width:"10px"}}></p>
@@ -101,10 +101,10 @@ const IntroPage = () => {
                     <div className='container' style={{gap:"10%", width:"100%", height:"100%"}}>
                         {!user?.id && (
                         <>
-                            <button className="login-button" style={{ marginTop:"10%" }} onClick={handleClickRegister}>
+                            <button className="login-button" style={{ marginTop:"10%", fontSize:"2vw" }} onClick={handleClickRegister}>
                                 Đăng ký
                             </button>
-                            <button className="login-button" style={{ marginTop:"10%" }} onClick={handleClickLogin}>
+                            <button className="login-button" style={{ marginTop:"10%", fontSize:"2vw" }} onClick={handleClickLogin}>
                                 Đăng nhập
                             </button>
                         </>

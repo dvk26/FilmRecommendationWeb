@@ -79,12 +79,12 @@ const CollectionPage = () =>{
                         },
                     ]}
                 >
-                    <Input placeholder="New collection" style={{height: "50%"}}/>
+                    <Input placeholder="Tên danh sách mới" style={{height: "50%"}}/>
                 </Form.Item>
 
                 <Form.Item label={null}>
                     <Button type="primary" htmlType="submit">
-                        Submit
+                        Thêm
                     </Button>
                 </Form.Item>
             </Form>

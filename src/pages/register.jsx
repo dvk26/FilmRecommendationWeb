@@ -11,8 +11,7 @@ const RegisterPage = () => {
     const onFinish = async (values) => {
         if (values.password !== values.password_1) {
             notification.error({
-                message:"Error register user",
-                description: "Password không khớp"
+                message:"Mật khẩu không khớp"
             })
         }
         else {
@@ -20,15 +19,13 @@ const RegisterPage = () => {
 
             if(res.data ){
                 notification.success({
-                    message: "Success register user",
-                    description: "Register user thành công"
+                    message: "Đăng ký thành công"
                 })
                 navigate("/login")
                 }
             else{
                 notification.error({
-                message:"Error register user",
-                description: JSON.stringify(res.message)
+                message:"Đăng ký thất bại"
             })
             }
         }

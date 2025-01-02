@@ -4,7 +4,7 @@ body {
     background-attachment: fixed;
 }
 .register-form {
-    width: 500px;
+    width: 35vw;
     /* Độ rộng của form */
     padding: 20px;
     /* Khoảng cách bên trong */
@@ -24,7 +24,7 @@ body {
     align-items: center;
     color:#fff;
     font-size: xx-large;
-    margin: 40px auto;
+    margin: 5% auto;
     padding: 20px
 }
 
