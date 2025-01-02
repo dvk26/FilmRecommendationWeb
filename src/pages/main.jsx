@@ -21,15 +21,24 @@ const MainPage = () => {
 
     return(
         <div>
-            <div className="container">
-                <img  src= "/images/poster.png" alt="" />
+            <div className="container" style={{marginBottom:"20px"}}>
+                <img  src= "/images/poster.png" alt="" style={{
+                    width:"80%",
+                    height:"100%"
+                }}/>
             </div>
-            <div className="search-container">
+
+            <div className="search-container" style={{height: "60px"}}>
                 <Input
                     placeholder="Search..."
                     suffix={<SearchOutlined style={{ color: "#fff" }} />}
                     className="custom-input"
                     onPressEnter={handleSearch}
+
+                    style={{
+                        width: "40%",
+                        height: "100%"
+                    }}
                 />
             </div>
         </div>

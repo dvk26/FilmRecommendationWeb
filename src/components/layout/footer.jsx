@@ -8,10 +8,10 @@ const Footer = () => {
                 <p className="siteTitle" style={{fontSize: "38px"}}>Liên hệ với chúng tôi</p>
                
 
-                <div className="siteContent" style={{fontSize: "26px", lineHeight: "1.2"}}>
-                    <p>Trường Đại học Khoa học tự nhiên - HCMUS</p>
-                    <p>227 Nguyễn Văn Cừ, phường 4, Quận 5 </p>
-                    <p>Thành phố Hồ Chí Minh</p>
+                <div className="siteContent">
+                    <p style={{fontSize: "26px", lineHeight: "1.2"}}>Trường Đại học Khoa học tự nhiên - HCMUS</p>
+                    <p style={{fontSize: "26px", lineHeight: "1.2"}}>227 Nguyễn Văn Cừ, phường 4, Quận 5 </p>
+                    <p style={{fontSize: "26px", lineHeight: "1.2"}}>Thành phố Hồ Chí Minh</p>
                 </div>
 
                 <p className="siteTitle" style={{fontSize: "38px", marginTop: "50px"}}>Hotline</p>
@@ -28,9 +28,9 @@ const Footer = () => {
             </Col>
             <Col span={7} style={{marginLeft: "auto", marginRight: "45px"}}>  
 
-                <div className="siteTitle" style={{textAlign: "right", fontSize: "38px"}}>
-                    <p>Đăng ký để nhận</p>
-                    <p>Thông tin mới nhất!</p>
+                <div className="siteTitle" style={{textAlign: "right"}}>
+                    <p style={{fontSize:"40px"}}>Đăng ký để nhận</p>
+                    <p style={{fontSize:"40px"}}>Thông tin mới nhất!</p>
                 </div>
                 <br />
 

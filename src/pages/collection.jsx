@@ -79,7 +79,7 @@ const CollectionPage = () =>{
                         },
                     ]}
                 >
-                <Input placeholder="New collection"/>
+                    <Input placeholder="New collection" style={{height: "50%"}}/>
                 </Form.Item>
 
                 <Form.Item label={null}>
@@ -98,14 +98,14 @@ const CollectionPage = () =>{
         <div style={{paddingLeft:"90px"}}>
             <Row>
                 <Col span={18}>
-                    <p className='siteContent' style={{marginTop: "30px", fontWeight: "bold", fontSize: "40px"}}>{collectionName}</p>
+                    <p className='siteContent' style={{marginTop: "30px", fontWeight: "bold", fontSize: "60px"}}>{collectionName}</p>
 
                     {Array.isArray(currentCollectionFilms) && currentCollectionFilms.length > 0 ? (
                         currentCollectionFilms.map((collection) => (
-                            <Row style={{marginTop: "30px"}}>
+                            <Row style={{marginTop: "30px", marginBottom:"100px"}}>
                                 <Col span={8}>
                                 <img
-                                    style={{ width: "100%", maxHeight: "85%", borderRadius: "5%" }}
+                                    style={{ width: "100%", height: "100%", borderRadius: "5%" }}
                                     src={
                                         collection.imageUrl === "https://image.tmdb.org/t/p/w500null" || !collection.imageUrl
                                             ? "/testGrayPicture.svg"
@@ -117,7 +117,7 @@ const CollectionPage = () =>{
 
                                 <Col span={15} style={{paddingLeft: "30px"}}>
                                     <div>
-                                        <p className="siteTitle" style={{fontSize: "35px"}}>{collection.title}</p>
+                                        <p className="siteTitle" style={{fontSize: "50px"}}>{collection.title}</p>
 
                                         <Flex gap={"large"} style={{marginTop: "5px", fontWeight: "bold"}}>
                                             <p className="siteContent" style={{fontSize: "35px"}}>{collection.imdbRating} IMDb</p>
@@ -147,12 +147,21 @@ const CollectionPage = () =>{
                     <ul style={{paddingLeft:"40px", listStyleType: "square", listStyle: "square inside", fontSize: "28px", color: "white", lineHeight: 2, textIndent: "-40px"}}>
                         {Array.isArray(collectionsList) && collectionsList.length > 0 ? (
                             collectionsList.map((collection) => (
-                                <li>
+                                <li style={{width: "100%"}}>
                                     <a 
                                         href=""
                                         onClick={(e) => {
                                             e.preventDefault(); // Prevent the default navigation behavior
                                             handleClick(collection.id); // Call your onClick function
+                                        }}
+                                        style={{
+                                            maxWidth: "100%",        // Ensures the text doesn't overflow the parent
+                                            overflow: "hidden",      // Hides the overflow text
+                                            textOverflow: "ellipsis", // Adds ellipsis to the truncated text
+                                            whiteSpace: "nowrap",    // Prevents text from wrapping
+                                            wordBreak: "break-word", // Handles long words
+                                            color: "inherit",        // Preserves text color
+                                            textDecoration: "none",  // Removes underline
                                         }}
                                     >
                                         {collection.name}

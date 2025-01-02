@@ -52,12 +52,7 @@ const LoginPage = () => {
 
                 <Col span={11} style={{
                     margin: "0px",
-                    padding: "0px",
-                    // border: "none",
-                    // borderRadius: "5px",
-                    // // padding: "10px",
-                    // display: "flex",
-                    // width: "100%",
+                    padding: "0px"
                 }}>
                     <div className="login-form" >
                         <h2 className="siteTitle" style={{paddingLeft:"10px", color:"white"}}>Đăng nhập</h2>
@@ -121,11 +116,10 @@ const LoginPage = () => {
 
                             <div style={{display: "flex", justifyContent: "center", textAlign: "center" , width:"100%", fontSize: "x-large",height:"100%" ,  borderRadius:"20px" , color:"white"}}>
                                 <span className="siteContent" style={{fontSize:"20px"}}>Bạn chưa có tài khoản?</span>
-                                <Button className="siteContent" style={{padding:"50px 0 -4px 0",fontSize:"20px", color:"white", fontWeight:"bold"}}  type="link" htmlType="button" onClick={() => { navigate('/register'); }}>
+                                <Button className="siteContent" style={{padding:"50px 0 -4px 0", fontSize:"20px", color:"white", fontWeight:"bold"}}  type="link" htmlType="button" onClick={() => { navigate('/register'); }}>
                                     Đăng ký ngay!
                                 </Button>
                             </div>
-                        
                         </Form>
                     </div>
                 </Col>

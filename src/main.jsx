@@ -28,6 +28,10 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage/>,
     children:[
       {
+        index: true, // This makes IntroPage the default route for "/"
+        element: <IntroPage />,
+      },
+      {
         path: "/users",
         element: <UserPage />,
       },

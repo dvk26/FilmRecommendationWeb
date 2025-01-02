@@ -13,7 +13,7 @@ const Header = () =>{
     const location = useLocation();
     const isHomePage = location.pathname === '/main';
 
-    // console.log("check data >>>>>>:",user)
+    console.log("check data >>>>>>:",user)
     const onClick = (e) => {
         setCurrent(e.key);
     };
@@ -69,6 +69,10 @@ const Header = () =>{
                                     suffix={<SearchOutlined style={{ color: "#fff" }} />}
                                     className="custom-input-header"
                                     onPressEnter={handleSearch}
+                                    style={{
+                                        height: "60%",
+                                        fontSize: "20px"
+                                    }}
                             />,
                             key: 'searchBar',
         },
@@ -87,7 +91,7 @@ const Header = () =>{
             label: 
             <Flex>
                 <img src="./Avatar.svg" alt="" style={{maxWidth:"50px", maxHeight:"50px"}}/>
-                <p style={{fontSize: "20px", paddingTop: "5px", marginLeft: "10px", fontWeight: "bold"}}>{user.fullName}</p>
+                <p style={{fontSize: "20px", paddingTop: "5px", marginLeft: "10px", fontWeight: "bold"}}>{user.userName}</p>
             </Flex>,
             key: 'setting',
             children:

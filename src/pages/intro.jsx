@@ -29,14 +29,22 @@ const IntroPage = () => {
     return (
         <div >
        
-            <div className="container">
-                <img src={introPic} style={{width:"100%",height:"100%",margin:"auto"}} />
-                <p className="intro-text" style={{fontSize:"50px",bottom:"110px",right:"50px"}}>Movies that sync with your soul.</p>
+            <div className="container" style={{display:"flex", flexDirection:"column", marginBottom:"40px", marginTop:"30px"}}>
+                <img src={introPic} style={{width:"100%",height:"100%",margin:"auto", opacity:"0.7"}} />
+
+                <div style={{position:"absolute", height:"65%", width:"95%"}}>
+                    <p style={{height: "75%"}}></p>
+                    <div style={{display:"flex"}}>
+                        <p style={{width:"10px"}}></p>
+                        <p className="intro-text" style={{fontSize:"50px", marginTop:"auto", marginLeft:"auto"}}>Movies that sync with your soul.</p>
+                    </div>
+                </div>
+                
                 <button className="try-now-button">Try now</button>
             </div>
 
-            <div className="container" >
-                <h2>THỊNH HÀNH</h2>
+            <div style={{display:"flex", flexDirection:"column"}}>
+                <h2 style={{marginLeft: "7%", fontSize:"70px"}}>THỊNH HÀNH</h2>
                 <div className="movies-container">
                     <div className="movie-item" style={{top: "110px"}}>
                         <span className="movie-rank">2</span>
@@ -57,44 +65,54 @@ const IntroPage = () => {
                 </div>
             </div>
 
-            <div className="container">
-                <h2>TRỢ THỦ AI HOÀN HẢO</h2>
-                <img src={aiPolygon} width="100%" style={{margin: "auto"}}/>
-                <img src={Aicamera} style={{position:"absolute", bottom:"3%",right:"2%",width:"180px"}}/>
+            <div style={{display:"flex", flexDirection:"column", position:"relative"}}>
+                <h2 style={{marginLeft: "7%", fontSize:"70px"}}>TRỢ THỦ AI HOÀN HẢO</h2>
+                <img src={aiPolygon} style={{width:"80%", margin:"auto"}}/>
 
-                <p style={{fontSize:"40px",position:"absolute",top:"3%",left:"81%"}}>Phù hợp với</p>
-                <p style={{fontSize:"40px",position:"absolute",top:"12%",left:"79%"}}>sở thích của bạn.</p>
-                <img src={iconFavorite} style={{position:"absolute",width:"60px",top:"29%",left:"86%"}}/>
+                <div style={{display:"flex"}}>
+                    <p style={{marginRight:"auto"}}></p>
+                    <img src={Aicamera} style={{width:"12%", position:"absolute", left:"78%", top:"75%"}}/>
+                </div>
 
-                <p style={{fontSize:"40px",position:"absolute",top:"25%",left:"66.5%"}}>Không gian</p>
-                <p style={{fontSize:"40px",position:"absolute",top:"33%",left:"63.5%"}}>giải trí, thư giãn.</p>
-                <img src={iconHappy} style={{position:"absolute",width:"60px",top:"50%",left:"70.5%"}}/>
+                <p className='siteContent' style={{fontSize:"35px",position:"absolute",top:"26%",left:"70%"}}>Phù hợp với</p>
+                <p className='siteContent' style={{fontSize:"35px",position:"absolute",top:"32%",left:"70%"}}>sở thích của bạn.</p>
+                <img src={iconFavorite} style={{position:"absolute",width:"60px",top:"45%",left:"82%"}}/>
 
-                <p style={{fontSize:"40px",position:"absolute",top:"37%",left:"49%"}}>Trải nghiệm</p>
-                <p style={{fontSize:"40px",position:"absolute",top:"46%",left:"51%"}}>miễn phí.</p>
-                <img src={iconFree} style={{position:"absolute",width:"60px",top:"63%",left:"54%"}}/>
+                <p className='siteContent' style={{fontSize:"35px",position:"absolute",top:"39%",left:"51%"}}>Không gian</p>
+                <p className='siteContent' style={{fontSize:"35px",position:"absolute",top:"45%",left:"51%"}}>giải trí, thư giãn.</p>
+                <img src={iconHappy} style={{position:"absolute",width:"60px",top:"58%",left:"61%"}}/>
 
-                <p style={{fontSize:"40px",position:"absolute",top:"52%",left:"37.5%"}}>Dùng ở</p>
-                <p style={{fontSize:"40px",position:"absolute",top:"61%",left:"31.5%"}}>mọi lúc, mọi nơi.</p>
-                <img src={iconTime} style={{position:"absolute",width:"60px",top:"81%",left:"39%"}}/>
+                <p className='siteContent' style={{fontSize:"35px",position:"absolute",top:"52%",left:"32%"}}>Trải nghiệm</p>
+                <p className='siteContent' style={{fontSize:"35px",position:"absolute",top:"58%",left:"32%"}}>miễn phí.</p>
+                <img src={iconFree} style={{position:"absolute",width:"60px",top:"71%",left:"44%"}}/>
+
+                <p className='siteContent' style={{fontSize:"35px",position:"absolute",top:"65%",left:"13%"}}>Dùng ở</p>
+                <p className='siteContent' style={{fontSize:"35px",position:"absolute",top:"71%",left:"13%"}}>mọi lúc, mọi nơi.</p>
+                <img src={iconTime} style={{position:"absolute",width:"60px",top:"84%",left:"25%"}}/>
             </div>
 
-            <div className="container" style={{padding:"50px"}}>
-                <img src={logo} style={{width:"460px",position: "relative"}}/>
-                <h2 className="intro-text" style={{fontSize:"119px",top:"98%",left:"54%"}}>MIUVIE</h2>
-                <p2 style={{fontFamily:"Bagel Fat One",color:"#D4C5C5",fontSize:"50px",position:"absolute",top:"100%",left:"50%"}} >Let’s move vì MIUVIE!</p2>
-                
+            <div className="container" style={{marginTop:"5%"}}>
+                <img src={logo} style={{width:"30%", marginRight:"5%"}}/>
 
-                {!user?.id && (
-                    <>
-                        <button className="login-button" style={{ top: "73%", left: "50%" }} onClick={handleClickRegister}>
-                            Đăng ký
-                        </button>
-                        <button className="login-button" style={{ top: "73%", left: "70%" }} onClick={handleClickLogin}>
-                            Đăng nhập
-                        </button>
-                    </>
-                )}
+                <div className="container" style={{display:"flex", flexDirection:"column"}}>
+                    <h2 className="intro-text" style={{fontSize:"13vw"}}>MIUVIE</h2>
+                    <p2 style={{fontFamily:"Bagel Fat One",color:"#D4C5C5",fontSize:"4.3vw"}} >Let’s move vì MIUVIE!</p2>
+
+                    <div className='container' style={{gap:"10%", width:"100%", height:"100%"}}>
+                        {!user?.id && (
+                        <>
+                            <button className="login-button" style={{ marginTop:"10%" }} onClick={handleClickRegister}>
+                                Đăng ký
+                            </button>
+                            <button className="login-button" style={{ marginTop:"10%" }} onClick={handleClickLogin}>
+                                Đăng nhập
+                            </button>
+                        </>
+                        )}
+                    </div>
+                </div>
+
+                
             </div>
         </div>
     )

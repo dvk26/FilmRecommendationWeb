@@ -126,10 +126,10 @@ const SearchPage = () =>{
             {error && <p>Error: {error}</p>}
             {Array.isArray(films) && films.length > 0 ? (
                 films.map((film, index) => (
-                <Row key={index}>
-                    <Col span={8} style={{paddingTop: "40px"}}>
+                <Row key={index} style={{marginBottom:"30px"}}>
+                    <Col span={8} style={{paddingTop: "80px"}}>
                     <img
-                        style={{ width: "100%", maxHeight: "85%", borderRadius: "5%" }}
+                        style={{ width: "100%", height: "100%", borderRadius: "5%" }}
                         src={
                             film.imageUrl === "https://image.tmdb.org/t/p/w500null" || !film.imageUrl
                                 ? "/testGrayPicture.svg"
@@ -139,9 +139,9 @@ const SearchPage = () =>{
                     />
                     </Col>
 
-                    <Col span={16} style={{paddingTop: "40px", paddingLeft: "70px"}}>
-                        <div>
-                            <p className="siteTitle" style={{fontSize: "43px"}}>{film.title}</p>
+                    <Col span={16} style={{paddingTop: "80px", paddingLeft: "70px"}}>
+                        <div style={{height: "90%", overflowY: "auto"}}>
+                            <p className="siteTitle" style={{fontSize: "50px"}}>{film.title}</p>
 
                             <Flex gap={"large"} style={{marginTop: "15px", fontWeight: "bold"}}>
                                 <p className="siteContent">{film.imdbRating} IMDb</p>
@@ -152,11 +152,11 @@ const SearchPage = () =>{
                             <p className="siteContent" style={{fontWeight: "bold", marginTop: "10px", marginBottom: "10px"}}>{film.genres}</p>
                             <hr style={{width:"70%"}}/>
 
-                            <p className="siteContent" style={{textAlign: "justify", marginTop: "15px", fontSize: "25px"}}>
-                            {film.overview}
+                            <p className="siteContent" style={{textAlign: "justify", marginTop: "15px", fontSize: "30px"}}>
+                                {film.overview}
                             </p>
                         </div>
-                        <div style={{position: "absolute", bottom: "0"}}>
+                        <div style={{position: "absolute", marginTop:"auto"}}>
                             <Dropdown
                                 menu={{
                                    items: 

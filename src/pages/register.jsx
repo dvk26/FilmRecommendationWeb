@@ -46,29 +46,10 @@ const RegisterPage = () => {
     }, [location.pathname]);
     return (
         <div className="register-page">
-            <Row justify={"center"} style={{ margin: "0px", padding: "20px 0", width:"100%",display:"flex",justifyContent: "flex-start", alignItem: "center"}}>
-                <Col xs={24} md={16} lg={12} style={{
-                    padding: 0, // Loại bỏ padding
-                    display: "flex",
-                    justifyContent: "flex-start", 
-                    alignItem: "center",
-                }}>
-                
-                <fieldset
-                style={{
-                    margin: "5px",
-                    border: "none",
-                    borderRadius: "5px",
-                    padding: "20px",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: "100%",
-                }}
-                >
-                    <div className="register-form" >
-                        <h1>Đăng ký</h1>
+            <Row style={{height:"100vh", overflowY:"hidden"}}>
+                <Col span={12}>
+                    <div className="register-form">
+                        <h1 className="siteTitle" style={{marginBottom:"20px"}}>Đăng ký</h1>
                         <Form
 
                             layout="vertical"
@@ -82,7 +63,6 @@ const RegisterPage = () => {
                                 width: "100%", // Đảm bảo form chiếm toàn bộ chiều ngang
                                 maxWidth: "750px", // Đặt chiều rộng tối đa cho form
                                 fontSize:"x-large",
-      
                             }}
                         >
                             <Form.Item
@@ -97,7 +77,7 @@ const RegisterPage = () => {
                                     },
                                 ]}
                             >
-                                <Input placeholder="Tên đăng nhập"style={{ fontSize: "large" }} />
+                                <Input placeholder="Tên đăng nhập"style={{fontSize: "25px", color:"white" }} />
                             </Form.Item>
 
                             <Form.Item
@@ -112,7 +92,7 @@ const RegisterPage = () => {
                                     },
                                 ]}
                             >
-                                <Input placeholder="Email" style={{ fontSize: "large" }}/>
+                                <Input placeholder="Email" style={{ fontSize: "25px", color:"white" }}/>
                             </Form.Item>
 
                             <Form.Item
@@ -127,7 +107,7 @@ const RegisterPage = () => {
                                     },
                                 ]}
                             >
-                                <Input placeholder="Mật khẩu" style={{ fontSize: "large" }} />
+                                <Input placeholder="Mật khẩu" style={{ fontSize: "25px", color:"white" }} />
                             </Form.Item>
                             
                             <Form.Item
@@ -142,39 +122,43 @@ const RegisterPage = () => {
                                     },
                                 ]}
                             >
-                                <Input placeholder="Nhập lại mật khẩu" style={{ fontSize: "large" }} />
+                                <Input placeholder="Nhập lại mật khẩu" style={{ fontSize: "25px", color:"white" }} />
                             </Form.Item>
 
-                            <Button onClick={() => form.submit()}  color="danger" style={{
+                            <Button className="siteContent" onClick={() => form.submit()}  color="danger" style={{
                                 display: "block",
                                 margin: "10px auto",
                                 padding: "0px 20px",
                                 textAlign: "center",
                                 backgroundColor: "#B23F4C",
                                 color : "white",
-                                width:"100%",
-                                borderRadius:"20px",
-                                fontSize:"large",
+                                fontSize: "35px", height:"90px" , width:"100%", borderRadius:"50px 50px", fontWeight:"bold"
                             }}>
-                                Register
+                                Đăng ký
                             </Button>
+
+                            <div style={{display: "flex", justifyContent: "center", textAlign: "center" , width:"100%", fontSize: "x-large",height:"100%" ,  borderRadius:"20px" , color:"white"}}>
+                                <span className="siteContent" style={{fontSize:"20px"}}>Bạn đã có tài khoản?</span>
+                                <Button className="siteContent" style={{padding:"50px 0 -4px 0", fontSize:"20px", color:"white", fontWeight:"bold"}}  type="link" htmlType="button" onClick={() => { navigate('/login'); }}>
+                                    Đăng nhập ngay!
+                                </Button>
+                            </div>
                         </Form>
                     </div>
-                </fieldset>
+                </Col>
 
-                <img
-                    src= "/images/signup.png"
+                <Col span={12}>
+                    <img
+                        src= "/images/signup.png"
 
-                    alt="Signup Illignup.pngustration" 
-                    style={{
-                        width: "100%",        // Chiều rộng hình ảnh chiếm toàn bộ container
-                        maxWidth: "600px",    // Chiều rộng tối đa
-                        margin: "20px auto",  // Căn giữa hình ảnh
-                        display: "block",      // Đảm bảo hình ảnh là một block element
-                        padding: "20px"
-                    }}
-                />
-                
+                        alt="Signup Illignup.pngustration" 
+                        style={{
+                            width: "100%",      
+                            height: "100%",
+                            maxWidth: "100%",  
+                            display: "block",      
+                        }}
+                    />
                 </Col>
             </Row>
         </div>
