@@ -134,7 +134,7 @@ const CollectionPage = () =>{
                             </Row>
                         ))
                     ) : (
-                        <p>No film added to collection</p>
+                        <p>Danh sách trống</p>
                     )}
                 </Col>
 
@@ -169,7 +169,7 @@ const CollectionPage = () =>{
                                 </li>
                             ))
                         ) : (
-                            <p>No collection added</p>
+                            <p>Chưa tạo danh sách phim</p>
                         )}
                     </ul>
                 </Col>

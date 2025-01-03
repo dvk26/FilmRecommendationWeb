@@ -214,7 +214,7 @@ const SearchPage = () =>{
                                                                         </Col>
                                                                     ))
                                                                 ) : (
-                                                                    <p>No collection added</p>
+                                                                    <p>Chưa tạo danh sách phim</p>
                                                                 )}
                                                             </Row>
                                                         </Checkbox.Group>
@@ -252,7 +252,7 @@ const SearchPage = () =>{
                                 placement="topLeft" 
                                 trigger={['click']}
                             >
-                                <Button className= "myListButton" id="ButtonAbout" style={{marginBottom: "100px"}}> + My List</Button>
+                                <Button className= "myListButton" id="ButtonAbout" style={{marginBottom: "100px"}}> Bộ sưu tập</Button>
                             </Dropdown> 
     
                             <Button
