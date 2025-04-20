@@ -1,0 +1,65 @@
+body {
+    background: radial-gradient(50% 50% at 50% 50%, #873D3D 0%, #282323 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 70%;
+    /* 50% kích thước của khung chứa */
+    height: auto;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-input {
+    width: 400px;
+
+    height: 50px;
+    background: linear-gradient( #474545, #373232);
+    border-radius: 25px;
+    padding-left: 15px;
+    border: none;
+}
+
+.custom-input .ant-input {
+    background: transparent;
+
+    color: white;
+
+    outline: none;
+
+}
+
+.custom-input:hover {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* Hiệu ứng hover */
+}
+
+.custom-input:focus-within {
+    border: 1px solid #fff;
+    /* Hiệu ứng focus */
+}
+
+.custom-input .ant-input-prefix {
+    color: #fff;
+    /* Màu icon */
+}
+
+:where(.css-dev-only-do-not-override-49qm).ant-input-affix-wrapper>input.ant-input,
+:where(.css-dev-only-do-not-override-49qm).ant-input-affix-wrapper>textarea.ant-input {
+    /* Thay đổi màu nền */
+    color: white;
+
+    font-size: 17px;
+    /* Kích thước chữ */
+}

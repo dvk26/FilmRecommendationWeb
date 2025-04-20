@@ -1,0 +1,103 @@
+body {
+    background: radial-gradient(50% 50% at 50% 50%, #873D3D 0%, #282323 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding:0px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.custom-input {
+    width: 400px;
+
+    height: 50px;
+    background: linear-gradient(#474545, #373232);
+    border-radius: 25px;
+    padding-left: 15px;
+    border: none;
+}
+
+.custom-input .ant-input {
+    background: transparent;
+    color: white;
+    outline: none;
+}
+
+.custom-input:hover {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.custom-input:focus-within {
+    border: 1px solid #fff;
+}
+
+.custom-input .ant-input-prefix {
+    color: #fff;
+}
+
+:where(.css-dev-only-do-not-override-49qm).ant-input-affix-wrapper>input.ant-input,
+:where(.css-dev-only-do-not-override-49qm).ant-input-affix-wrapper>textarea.ant-input {
+    color: white;
+    font-size: 17px;
+}
+
+.myListButton{
+    font-family: 'Piazzolla', sans-serif;
+    color: #3F3F3F;
+    font-size: 30px;
+
+    width: 180px;
+    height: 60px;
+    border-radius: 40px 40px 40px 40px;
+}
+
+.dis_LikeButton {
+    background: #9C979773;
+    color: white;
+    font-size: 30px;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50px 50px 50px 50px;
+}
+
+:where(.css-dev-only-do-not-override-49qm).ant-dropdown .ant-dropdown-menu {
+    background-color: #4D4646;
+    border-radius: 20px;
+}
+
+/* Collection CSS */
+.sideBar {
+    border: 1px solid #FFFFFF03;
+    border-image: linear-gradient(270.64deg, rgba(255, 255, 255, 0.5) 8.27%, rgba(60, 60, 60, 0.5) 108.41%) 1;
+
+    backdrop-filter: blur(71.19999694824219px)
+}
+
+.addButton{
+    font-family: 'Piazzolla', sans-serif;
+    color: #3F3F3F;
+    font-size: 22px;
+
+    width: 180px;
+    height: 60px;
+    border-radius: 40px 40px 40px 40px;
+}
+
+li a {
+    padding: 0;
+    margin: 0;
+    color: white;
+}

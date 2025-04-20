@@ -1,0 +1,151 @@
+
+
+body {
+    background: radial-gradient(50% 50% at 50% 50%, #873D3D 0%, #282323 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  background: linear-gradient(90.04deg, #A47A1E -11.24%, #C09539 -1.33%, #D3A84C 6.1%, #E8C96F 13.54%, #F9E38A 20.97%, #FFEC94 25.93%, #FCE68E 28.41%, #E6BE69 49.47%, #EFC870 56.9%, #FFD87C 73.01%, #C19B48 92.83%, #BF9946 102.75%, #BA933F 106.46%, #B08934 107.7%, #A27B23 110.18%, #956D13 111.42%);
+  background-clip: text;
+  color: transparent;
+  font-family: Baloo Bhaijaan;
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 180px;
+  text-align: left;
+}
+
+p {
+  font-family: Baloo Bhaijaan 2;
+  color: #FFFFFF;
+  font-size: 19px;
+}
+
+.container {
+  width: auto;
+  height: auto;
+  display: grid;
+  position: relative;
+  padding: 30px;
+}
+
+.intro-text {
+  background: linear-gradient(269.89deg, #A47A1E -12.64%, #C09539 -2.86%, #D3A84C 4.47%, #E8C96F 11.8%, #F9E38A 19.13%, #FFEC94 24.02%, #FCE68E 26.46%, #E6BE69 47.24%, #EFC870 54.57%, #FFD87C 70.46%, #C19B48 90.01%, #BF9946 99.79%, #BA933F 103.45%, #B08934 104.67%, #A27B23 107.12%, #956D13 108.34%);
+  background-clip: text;
+  color: transparent;
+  font-family: Bagel Fat One;
+  font-weight: 400;
+  /* line-height: 101.36px; */
+  /* text-align: right;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none; */
+  /* position: absolute; */
+}
+
+.try-now-button {
+  border: 1px solid;
+  border-image: linear-gradient(111.07deg, #FFFFFF -75.18%, rgba(212, 212, 212, 0.5) 24.82%),
+  linear-gradient(70.05deg, rgba(199, 199, 199, 0) -25.8%, rgba(255, 255, 255, 0.4) 72.94%);
+  background: #8C2E39;
+
+  width: 25%;
+  height: 80px;
+  margin: auto;
+  border-radius: 100px 100px 100px 100px;
+
+  font-family: Baloo Bhaijaan;
+  font-size: 35px;
+  font-weight: 400;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #FFFFFF;
+}
+
+.try-now-button:hover {
+  background-color: #A33A3A;
+}
+
+.movies-container {
+  display: flex;
+  height: 800px;
+  justify-content: center;
+  gap: 60px;
+}
+
+.movie-item {
+  position: relative;
+  width: 23%;
+  height: 100%;
+  text-align: center;
+}
+
+.movie-rank {
+  position: absolute;
+  top: -10px;
+  left: -1px;
+  color: #fff;
+  font-family: Baloo Bhaijaan;
+  font-size: 130px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 65%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px;
+  border: 3px solid #535050;
+  outline: 10px solid #535050; /* Second border */
+  outline-offset: -12px;  /* Adjust position of the outline */
+}
+
+.movie-title {
+  font-family: Baloo Bhaijaan 2;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+
+  margin-top: 20px;
+}
+
+.ai-camera {
+  position: relative;
+  width: 180px;
+  bottom: 175px;
+  left: 82%;
+}
+
+.login-button {
+  background-color: #8C2E39;
+  color: #FFFFFF; 
+  font-family: Baloo Bhaijaan; 
+  font-size: 35px;
+  padding: 15px 30px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 35%;
+  height: 130px;
+  /* position: absolute; */
+}
+
+.login-button:hover {
+  background-color: #701e28; /* Slightly darker red on hover */
+}

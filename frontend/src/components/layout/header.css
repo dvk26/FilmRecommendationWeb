@@ -1,0 +1,90 @@
+.Navbar {
+    background-color: transparent;
+    border: 0.1px solid;
+    border-image: linear-gradient(270.64deg, rgba(255, 255, 255, 0.5) 8.27%, rgba(60, 60, 60, 0.5) 108.41%) 1;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li a.siteTitle{
+    padding: 10px 1px;   
+    margin: 10px;
+}
+
+li a:hover:not(.active) {
+    cursor: pointer;
+}
+
+.ant-menu-light .ant-menu-item a {
+    color: white;
+}
+
+.ant-menu-light .ant-menu-item a.active {
+    background: linear-gradient(90deg, #F5D982 0%, #EBD07D 9.8%, #C5AF6B 20.8%, #CAB36D 24.8%, #D3BB70 33.3%, #E7C96D 38.3%, #C4AE68 47.8%, #CFB86E 66.8%, #B79B45 79.3%, #B89D48 87.8%, #8F7F4C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+.ant-menu .ant-menu-item a:hover {
+    color: white;
+}
+
+.ant-menu-light.ant-menu-horizontal >.ant-menu-item::after {
+    border-bottom: none;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-input-header {
+    width: 750px;
+
+    height: 55px;
+    background: linear-gradient( #474545, #373232);
+    border-radius: 25px;
+    padding-left: 15px;
+    border: none;
+
+    margin: 25px 0 0 0;
+}
+
+.custom-input-header .ant-input {
+    background: transparent;
+
+    color: white;
+
+    outline: none;
+
+}
+
+.custom-input-header:hover {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* Hiệu ứng hover */
+}
+
+.custom-input-header:focus-within {
+    border: 1px solid #fff;
+    /* Hiệu ứng focus */
+}
+
+.custom-input-header .ant-input-prefix {
+    color: #fff;
+    /* Màu icon */
+}
+
+:where(.css-dev-only-do-not-override-49qm).ant-input-affix-wrapper>input.ant-input,
+:where(.css-dev-only-do-not-override-49qm).ant-input-affix-wrapper>textarea.ant-input {
+    /* Thay đổi màu nền */
+    color: white;
+
+    font-size: 17px;
+    /* Kích thước chữ */
+}
